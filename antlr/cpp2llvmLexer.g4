@@ -1,200 +1,304 @@
-lexer grammar cpp2llvmLexer
+Lexer grammar Cpp2llvmLexer;
 
-Auto : 'auto';
-Break : 'break';
-Case : 'case';
-Char : 'char';
-Const : 'const';
-Continue : 'continue';
-Default : 'default';
-Do : 'do';
-Double : 'double';
-Else : 'else';
-Enum : 'enum';
-Extern : 'extern';
-Float : 'float';
-For : 'for';
-Goto : 'goto';
-If : 'if';
-Inline : 'inline';
-Int : 'int';
-Long : 'long';
-Register : 'register';
-Restrict : 'restrict';
-Return : 'return';
-Short : 'short';
-Signed : 'signed';
-Sizeof : 'sizeof';
-Static : 'static';
-Struct : 'struct';
-Switch : 'switch';
-Typedef : 'typedef';
-Union : 'union';
-Unsigned : 'unsigned';
-Void : 'void';
-Volatile : 'volatile';
-While : 'while';
+// KEYWORD 
+AND: '&&' | 'AND';
 
-Alignas : '_Alignas';
-Alignof : '_Alignof';
-Atomic : '_Atomic';
-Bool : '_Bool';
-Complex : '_Complex';
-Generic : '_Generic';
-Imaginary : '_Imaginary';
-Noreturn : '_Noreturn';
-StaticAssert : '_Static_assert';
-ThreadLocal : '_Thread_local';
+AND_EQ: '&=' | 'AND_EQ';
 
-LeftParen : '(';
-RightParen : ')';
-LeftBracket : '[';
-RightBracket : ']';
-LeftBrace : '{';
-RightBrace : '}';
+ASM: 'ASM';
 
-Less : '<';
-LessEqual : '<=';
-Greater : '>';
-GreaterEqual : '>=';
-LeftShift : '<<';
-RightShift : '>>';
+AUTO: 'AUTO';
 
-Plus : '+';
-PlusPlus : '++';
-Minus : '-';
-MinusMinus : '--';
-Star : '*';
-Div : '/';
-Mod : '%';
+ALIGNAS: '_ALIGNAS';
 
-And : '&';
-Or : '|';
-AndAnd : '&&';
-OrOr : '||';
-Caret : '^';
-Not : '!';
-Tilde : '~';
+ALIGNOF: '_ALIGNOF';
 
-Question : '?';
-Colon : ':';
-Semi : ';';
-Comma : ',';
+BITAND: '&' | 'BITAND';
 
-Assign : '=';
-// '*=' | '/=' | '%=' | '+=' | '-=' | '<<=' | '>>=' | '&=' | '^=' | '|='
-StarAssign : '*=';
-DivAssign : '/=';
-ModAssign : '%=';
-PlusAssign : '+=';
-MinusAssign : '-=';
-LeftShiftAssign : '<<=';
-RightShiftAssign : '>>=';
-AndAssign : '&=';
-XorAssign : '^=';
-OrAssign : '|=';
+BITOR: '|' | 'BITOR';
 
-Equal : '==';
-NotEqual : '!=';
+BOOL: 'BOOL';
 
-Arrow : '->';
-Dot : '.';
-Ellipsis : '...';
+BREAK: 'BREAK';
 
-Identifier
-    :   IdentifierNondigit
-        (   IdentifierNondigit
-        |   Digit
-        )*
-    ;
+CASE: 'CASE';
 
-fragment
-IdentifierNondigit
-    :   Nondigit
-    |   UniversalCharacterName
-    //|   // other implementation-defined characters...
-    ;
+CATCH: 'CATCH';
 
-fragment
-Nondigit
-    :   [a-zA-Z_]
-    ;
+CHAR: 'CHAR';
 
-fragment
-Digit
-    :   [0-9]
-    ;
+CHAR16_T: 'CHAR16_T';
 
-fragment
-UniversalCharacterName
-    :   '\\u' HexQuad
-    |   '\\U' HexQuad HexQuad
-    ;
+CHAR32_T: 'CHAR32_T';
 
-fragment
-HexQuad
-    :   HexadecimalDigit HexadecimalDigit HexadecimalDigit HexadecimalDigit
-    ;
+CLASS: 'CLASS';
 
-Constant
-    :   IntegerConstant
-    |   FloatingConstant
-    //|   EnumerationConstant
-    |   CharacterConstant
-    ;
+COMPL: '~' | 'COMPL';
 
-fragment
-IntegerConstant
-    :   DecimalConstant IntegerSuffix?
-    |   OctalConstant IntegerSuffix?
-    |   HexadecimalConstant IntegerSuffix?
-    |	BinaryConstant
-    ;
+CONST: 'CONST';
 
-fragment
-BinaryConstant
-	:	'0' [bB] [0-1]+
-	;
+CONSTEXPR: 'CONSTEXPR';
 
-fragment
-DecimalConstant
-    :   NonzeroDigit Digit*
-    ;
+CONST_CAST: 'CONST_CAST';
 
-fragment
-OctalConstant
-    :   '0' OctalDigit*
-    ;
+CONTINUE: 'CONTINUE';
 
-fragment
-HexadecimalConstant
-    :   HexadecimalPrefix HexadecimalDigit+
-    ;
+DEFAULT: 'DEFAULT';
 
-fragment
-HexadecimalPrefix
-    :   '0' [xX]
-    ;
+DELETE: 'DELETE';
 
-fragment
-NonzeroDigit
-    :   [1-9]
-    ;
+DO: 'DO';
 
-fragment
-OctalDigit
-    :   [0-7]
-    ;
+DOUBLE: 'DOUBLE';
 
-fragment
-HexadecimalDigit
-    :   [0-9a-fA-F]
-    ;
+DYNAMIC_CAST: 'DYNAMIC_CAST';
 
-fragment
-IntegerSuffix
-    :   UnsignedSuffix LongSuffix?
-    |   UnsignedSuffix LongLongSuffix
-    |   LongSuffix UnsignedSuffix?
-    |   LongLongSuffix UnsignedSuffix?
-    ;
+ELSE: 'ELSE';
+
+ENUM: 'ENUM';
+
+EXPLICIT: 'EXPLICIT';
+
+EXPORT: 'EXPORT';
+
+EXTERN: 'EXTERN';
+
+FALSE_: 'FALSE';
+
+FINAL: 'FINAL';
+
+FLOAT: 'FLOAT';
+
+FOR: 'FOR';
+
+FRIEND: 'FRIEND';
+
+GOTO: 'GOTO';
+
+IF: 'IF';
+
+INLINE: 'INLINE';
+
+INT: 'INT';
+
+LONG: 'LONG';
+
+MUTABLE: 'MUTABLE';
+
+NAMESPACE: 'NAMESPACE';
+
+NEW: 'NEW';
+
+NOT: '!' | 'NOT';
+
+NOT_EQ: '!=' | 'NOT_EQ';
+
+NULLPTR: 'NULLPTR';
+
+OPERATOR: 'OPERATOR';
+
+OR: '||' | 'OR';
+
+OR_EQ: '|=' | 'OR_EQ';
+
+OVERRIDE: 'OVERRIDE';
+
+PRIVATE: 'PRIVATE';
+
+PROTECTED: 'PROTECTED';
+
+PUBLIC: 'PUBLIC';
+
+REGISTER: 'REGISTER';
+
+REINTERPRET_CAST: 'REINTERPRET_CAST';
+
+RETURN: 'RETURN';
+
+SHORT: 'SHORT';
+
+SIGNED: 'SIGNED';
+
+SIZEOF: 'SIZEOF';
+
+STATIC: 'STATIC';
+
+STATIC_ASSERT: 'STATIC_ASSERT';
+
+STATIC_CAST: 'STATIC_CAST';
+
+STRUCT: 'STRUCT';
+
+SWITCH: 'SWITCH';
+
+TEMPLATE: 'TEMPLATE';
+
+THIS: 'THIS';
+
+THREAD_LOCAL: 'THREAD_LOCAL';
+
+THROW: 'THROW';
+
+TRUE_: 'TRUE';
+
+TRY: 'TRY';
+
+TYPEDEF: 'TYPEDEF';
+
+TYPEID: 'TYPEID';
+
+TYPENAME: 'TYPENAME';
+
+UNION: 'UNION';
+
+UNSIGNED: 'UNSIGNED';
+
+USING: 'USING';
+
+VIRTUAL: 'VIRTUAL';
+
+VOID: 'VOID';
+
+VOLATILE: 'VOLATILE';
+
+WCHAR_T: 'WCHAR_T';
+
+WHILE: 'WHILE';
+
+XOR: '^' | 'XOR';
+
+XOR_EQ: '^=' | 'XOR_EQ';
+
+
+// TOKENS
+LEFTPAREN: '(';
+
+RIGHTPAREN: ')';
+
+LEFTBRACKET: '[';
+
+RIGHTBRACKET: ']';
+
+LEFTBRACE: '{';
+
+RIGHTBRACE: '}';
+
+QUESTION: '?';
+
+COLON: ':';
+
+SEMI: ';';
+
+COMMA: ',';
+
+ARROW: '->';
+
+DOT: '.';
+
+ELLIPSIS: '...';
+
+
+// OPERATORS
+LESS: '<';
+
+LESSEQUAL: '<=';
+
+GREATER: '>';
+
+GREATEREQUAL: '>=';
+
+LEFTSHIFT: '<<';
+
+RIGHTSHIFT: '>>';
+
+PLUS: '+';
+
+PLUSPLUS: '++';
+
+MINUS: '-';
+
+MINUSMINUS: '--';
+
+STAR: '*';
+
+DIV: '/';
+
+MOD: '%';
+
+AND: '&';
+
+OR: '|';
+
+ANDAND: '&&';
+
+OROR: '||';
+
+CARET: '^';
+
+NOT: '!';
+
+TILDE: '~';
+
+ASSIGN: '=';
+
+STARASSIGN: '*=';
+
+DIVASSIGN: '/=';
+
+MODASSIGN: '%=';
+
+PLUSASSIGN: '+=';
+
+MINUSASSIGN: '-=';
+
+LEFTSHIFTASSIGN: '<<=';
+
+RIGHTSHIFTASSIGN: '>>=';
+
+ANDASSIGN: '&=';
+
+XORASSIGN: '^=';
+
+ORASSIGN: '|=';
+
+EQUAL: '==';
+
+NOTEQUAL: '!=';
+
+
+// identifier
+Identifier: IdentifierNondigit (IdentifierNondigit | Digit)*;
+
+fragment IdentifierNondigit: Nondigit | UniversalCharacterName;
+
+fragment Nondigit: [a-zA-Z_];
+
+fragment Digit: [0-9];
+
+fragment UniversalCharacterName: '\\u' HexQuad | '\\U' HexQuad HexQuad;
+
+fragment HexQuad: HexadecimalDigit HexadecimalDigit HexadecimalDigit HexadecimalDigit;
+
+Constant: IntegerConstant | FloatingConstant | CharacterConstant;
+
+fragment IntegerConstant: DecimalConstant IntegerSuffix? | OctalConstant IntegerSuffix? 
+                    | HexadecimalConstant IntegerSuffix? | BinaryConstant;
+
+fragment BinaryConstant: '0' [bB] [0-1]+;
+
+fragment DecimalConstant: NonzeroDigit Digit*;
+
+fragment OctalConstant: '0' OctalDigit*;
+
+fragment HexadecimalConstant: HexadecimalPrefix HexadecimalDigit+;
+
+fragment HexadecimalPrefix: '0' [xX];
+
+fragment NonzeroDigit: [1-9];
+
+fragment OctalDigit: [0-7];
+
+fragment HexadecimalDigit: [0-9a-fA-F];
+
+fragment IntegerSuffix: UnsignedSuffix LongSuffix? | UnsignedSuffix LongLongSuffix 
+                | LongSuffix UnsignedSuffix? | LongLongSuffix UnsignedSuffix?;
