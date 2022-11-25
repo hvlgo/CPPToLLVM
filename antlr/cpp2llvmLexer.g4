@@ -1,4 +1,4 @@
-Lexer grammar Cpp2llvmLexer;
+lexer grammar Cpp2llvmLexer;
 
 // KEYWORD 
 AND: '&&' | 'AND';
@@ -225,17 +225,15 @@ DIV: '/';
 
 MOD: '%';
 
-AND: '&';
+BITAND: '&';
 
-OR: '|';
+BITOR: '|';
 
 ANDAND: '&&';
 
 OROR: '||';
 
 CARET: '^';
-
-NOT: '!';
 
 TILDE: '~';
 
