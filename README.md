@@ -1,7 +1,5 @@
-# CPPToLLVM
-
-## 执行命令
-
-> 1. antlr4 xxx.g4
-> 2. javac *.java
-> 3. grun LexerName tokens -tokens testProgram
+## start in ubuntu/wsl
+* install antlr4
+* pip install antlr4-python3-runtime
+* antlr4 -Dlanguage=Python3 ./grammar/cpp2llvmLexer.g4 -Xexact-output-dir -o src
+* python main.py <inputfile>
