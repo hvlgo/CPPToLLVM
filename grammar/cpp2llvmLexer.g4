@@ -304,9 +304,7 @@ DecimalLiteral: NONZERODIGIT ('\''? DIGIT)*;
 
 OctalLiteral: '0' ('\''? OCTALDIGIT)*;
 
-HexadecimalLiteral: ('0x' | '0X') HEXADECIMALDIGIT (
-		'\''? HEXADECIMALDIGIT
-	)*;
+HexadecimalLiteral: ('0x' | '0X') HEXADECIMALDIGIT ('\''? HEXADECIMALDIGIT)*;
 
 BinaryLiteral: ('0b' | '0B') BINARYDIGIT ('\''? BINARYDIGIT)*;
 
