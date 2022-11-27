@@ -22,15 +22,6 @@ BooleanLiteral: False_ | True_;
 
 PointerLiteral: Nullptr;
 
-UserDefinedLiteral:
-	UserDefinedIntegerLiteral
-	| UserDefinedFloatingLiteral
-	| UserDefinedStringLiteral
-	| UserDefinedCharacterLiteral;
-
-MultiLineMacro:
-	'#' (~[\n]*? '\\' '\r'? '\n')+ ~ [\n]+ -> channel (HIDDEN);
-
 Directive: '#' ~ [\n]* -> channel (HIDDEN);
 /*Keywords*/
 
@@ -381,22 +372,6 @@ fragment Schar:
 	| Universalcharactername;
 
 fragment Rawstring: 'R"' (( '\\' ["()] )|~[\r\n (])*? '(' ~[)]*? ')'  (( '\\' ["()]) | ~[\r\n "])*? '"';
-
-UserDefinedIntegerLiteral:
-	DecimalLiteral Udsuffix
-	| OctalLiteral Udsuffix
-	| HexadecimalLiteral Udsuffix
-	| BinaryLiteral Udsuffix;
-
-UserDefinedFloatingLiteral:
-	Fractionalconstant Exponentpart? Udsuffix
-	| Digitsequence Exponentpart Udsuffix;
-
-UserDefinedStringLiteral: StringLiteral Udsuffix;
-
-UserDefinedCharacterLiteral: CharacterLiteral Udsuffix;
-
-fragment Udsuffix: Identifier;
 
 Whitespace: [ \t]+ -> skip;
 
