@@ -131,3 +131,8 @@ dmypy.json
 # tmp file
 *.exe
 .vscode/
+
+# out file
+build/
+dist/
+*.spec
