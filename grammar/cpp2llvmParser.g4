@@ -32,8 +32,7 @@ primaryExpression:
 	literal+
 	| This
 	| LeftParen expression RightParen
-	| idExpression
-	| lambdaExpression;
+	| idExpression;
 
 idExpression: unqualifiedId | qualifiedId;
 
@@ -47,34 +46,6 @@ unqualifiedId:
 
 qualifiedId: nestedNameSpecifier Template? unqualifiedId;
 
-nestedNameSpecifier:
-	(theTypeName | namespaceName | decltypeSpecifier)? Doublecolon
-	| nestedNameSpecifier (
-		Identifier
-		| Template? simpleTemplateId
-	) Doublecolon;
-lambdaExpression:
-	lambdaIntroducer lambdaDeclarator? compoundStatement;
-
-lambdaIntroducer: LeftBracket lambdaCapture? RightBracket;
-
-lambdaCapture:
-	captureList
-	| captureDefault (Comma captureList)?;
-
-captureDefault: And | Assign;
-
-captureList: capture (Comma capture)* Ellipsis?;
-
-capture: simpleCapture | initcapture;
-
-simpleCapture: And? Identifier | This;
-
-initcapture: And? Identifier initializer;
-
-lambdaDeclarator:
-	LeftParen parameterDeclarationClause? RightParen Mutable? exceptionSpecification?
-		attributeSpecifierSeq? trailingReturnType?;
 
 postfixExpression:
 	primaryExpression
@@ -196,9 +167,7 @@ logicalOrExpression:
 	logicalAndExpression (OrOr logicalAndExpression)*;
 
 conditionalExpression:
-	logicalOrExpression (
-		Question expression Colon assignmentExpression
-	)?;
+	logicalOrExpression (Question expression Colon assignmentExpression)?;
 
 assignmentExpression:
 	conditionalExpression
@@ -232,7 +201,6 @@ statement:
 		| selectionStatement
 		| iterationStatement
 		| jumpStatement
-		| tryBlock
 	);
 
 labeledStatement:
@@ -283,16 +251,13 @@ jumpStatement:
 	) Semi;
 
 declarationStatement: blockDeclaration;
-/*Declarations*/
+/*Declarations*/ // TODO: reconstruct
 
 declarationseq: declaration+;
 
 declaration:
 	blockDeclaration
 	| functionDefinition
-	| templateDeclaration
-	| explicitInstantiation
-	| explicitSpecialization
 	| linkageSpecification
 	| namespaceDefinition
 	| emptyDeclaration
@@ -368,8 +333,6 @@ simpleTypeSignednessModifier:
 	| Signed;
 
 simpleTypeSpecifier:
-	nestedNameSpecifier? theTypeName
-	| nestedNameSpecifier Template simpleTemplateId
 	| simpleTypeSignednessModifier
 	| simpleTypeSignednessModifier? simpleTypeLengthModifier+
 	| simpleTypeSignednessModifier? Char
@@ -485,7 +448,7 @@ balancedtoken:
 		| LeftBracket
 		| RightBracket
 	)+;
-/*Declarators*/
+/*Declarators*/ 
 
 initDeclaratorList: initDeclarator (Comma initDeclarator)*;
 
@@ -592,180 +555,8 @@ initializerList:
 	)*;
 
 bracedInitList: LeftBrace (initializerList Comma?)? RightBrace;
-/*Classes*/
 
-className: Identifier | simpleTemplateId;
 
-classSpecifier:
-	classHead LeftBrace memberSpecification? RightBrace;
-
-classHead:
-	classKey attributeSpecifierSeq? (
-		classHeadName classVirtSpecifier?
-	)? baseClause?
-	| Union attributeSpecifierSeq? (
-		classHeadName classVirtSpecifier?
-	)?;
-
-classHeadName: nestedNameSpecifier? className;
-
-classVirtSpecifier: Final;
-
-classKey: Class | Struct;
-
-memberSpecification:
-	(memberdeclaration | accessSpecifier Colon)+;
-
-memberdeclaration:
-	attributeSpecifierSeq? declSpecifierSeq? memberDeclaratorList? Semi
-	| functionDefinition
-	| usingDeclaration
-	| staticAssertDeclaration
-	| templateDeclaration
-	| aliasDeclaration
-	| emptyDeclaration;
-
-memberDeclaratorList:
-	memberDeclarator (Comma memberDeclarator)*;
-
-memberDeclarator:
-	declarator (
-		virtualSpecifierSeq? pureSpecifier?
-		| braceOrEqualInitializer?
-	)
-	| Identifier? attributeSpecifierSeq? Colon constantExpression;
-
-virtualSpecifierSeq: virtualSpecifier+;
-
-virtualSpecifier: Override | Final;
-/*
- purespecifier: Assign '0'//Conflicts with the lexer ;
- */
-
-pureSpecifier:
-	Assign val = OctalLiteral {if $val.text.compareTo("0")!=0: raise InputMismatchException()
-		};
-/*Derived classes*/
-
-baseClause: Colon baseSpecifierList;
-
-baseSpecifierList:
-	baseSpecifier Ellipsis? (Comma baseSpecifier Ellipsis?)*;
-
-baseSpecifier:
-	attributeSpecifierSeq? (
-		baseTypeSpecifier
-		| Virtual accessSpecifier? baseTypeSpecifier
-		| accessSpecifier Virtual? baseTypeSpecifier
-	);
-
-classOrDeclType:
-	nestedNameSpecifier? className
-	| decltypeSpecifier;
-
-baseTypeSpecifier: classOrDeclType;
-
-accessSpecifier: Private | Protected | Public;
-/*Special member functions*/
-
-conversionFunctionId: Operator conversionTypeId;
-
-conversionTypeId: typeSpecifierSeq conversionDeclarator?;
-
-conversionDeclarator: pointerOperator conversionDeclarator?;
-
-constructorInitializer: Colon memInitializerList;
-
-memInitializerList:
-	memInitializer Ellipsis? (Comma memInitializer Ellipsis?)*;
-
-memInitializer:
-	meminitializerid (
-		LeftParen expressionList? RightParen
-		| bracedInitList
-	);
-
-meminitializerid: classOrDeclType | Identifier;
-/*Overloading*/
-
-operatorFunctionId: Operator theOperator;
-
-literalOperatorId:
-	Operator (
-		StringLiteral Identifier
-	);
-/*Templates*/
-
-templateDeclaration:
-	Template Less templateparameterList Greater declaration;
-
-templateparameterList:
-	templateParameter (Comma templateParameter)*;
-
-templateParameter: typeParameter | parameterDeclaration;
-
-typeParameter:
-	(
-		(Template Less templateparameterList Greater)? Class
-		| Typename_
-	) ((Ellipsis? Identifier?) | (Identifier? Assign theTypeId));
-
-simpleTemplateId:
-	templateName Less templateArgumentList? Greater;
-
-templateId:
-	simpleTemplateId
-	| (operatorFunctionId | literalOperatorId) Less templateArgumentList? Greater;
-
-templateName: Identifier;
-
-templateArgumentList:
-	templateArgument Ellipsis? (Comma templateArgument Ellipsis?)*;
-
-templateArgument: theTypeId | constantExpression | idExpression;
-
-typeNameSpecifier:
-	Typename_ nestedNameSpecifier (
-		Identifier
-		| Template? simpleTemplateId
-	);
-
-explicitInstantiation: Extern? Template declaration;
-
-explicitSpecialization: Template Less Greater declaration;
-/*Exception handling*/
-
-tryBlock: Try compoundStatement handlerSeq;
-
-functionTryBlock:
-	Try constructorInitializer? compoundStatement handlerSeq;
-
-handlerSeq: handler+;
-
-handler:
-	Catch LeftParen exceptionDeclaration RightParen compoundStatement;
-
-exceptionDeclaration:
-	attributeSpecifierSeq? typeSpecifierSeq (
-		declarator
-		| abstractDeclarator
-	)?
-	| Ellipsis;
-
-throwExpression: Throw assignmentExpression?;
-
-exceptionSpecification:
-	dynamicExceptionSpecification
-	| noeExceptSpecification;
-
-dynamicExceptionSpecification:
-	Throw LeftParen typeIdList? RightParen;
-
-typeIdList: theTypeId Ellipsis? (Comma theTypeId Ellipsis?)*;
-
-noeExceptSpecification:
-	Noexcept LeftParen constantExpression RightParen
-	| Noexcept;
 /*Preprocessing directives*/
 
 /*Lexer*/
