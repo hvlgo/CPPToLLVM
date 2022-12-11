@@ -1,5 +1,5 @@
-#include <iostream>
-using namespace std;
+int printf(char* a, ...);
+int scanf(char* a, ...);
 
 const int N = 1e5 + 10, M = 1e6 + 10;
 
@@ -16,8 +16,9 @@ void getNext(int n, char p[], int next[]){
 int main(){
     int n, m, next[N];
     char p[N], s[M];
-    cin >> n >> p;
-    cin >> m >> s;
+
+    // cin >> n >> p;
+    // cin >> m >> s;
 
     // if (n > m) {
     //     cout << "n is larger than m" << endl;
