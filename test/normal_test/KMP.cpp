@@ -6,7 +6,8 @@ int next[100];
 
 void getNext(int n){
     next[0] = 0;
-    for(int j = 0, i = 1; i < n; i++){
+    int i, j;
+    for(j = 0, i = 1; i < n; i++){
         while(j && p[i] != p[j])    j = next[j - 1];
         if(p[i] == p[j])            j++;
         next[i] = j;
@@ -23,7 +24,8 @@ int main(){
     
     getNext(n);
     
-    for(int i = 0, j = 0; i < m; i++){
+    int i, j;
+    for(i = 0, j = 0; i < m; i++){
         while(j && s[i] != p[j])    j = next[j - 1];
         if(s[i] == p[j])            j++;
         if(j == n){

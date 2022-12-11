@@ -5,6 +5,6 @@ char a[10];
 
 int main()
 {
-  printf( "Hello World" );
+  printf((char*)"Hello World");
   return 0;
 }
