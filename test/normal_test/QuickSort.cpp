@@ -29,13 +29,10 @@ int main()
 {   
     printf("enter N(<100):");
     scanf("%d", &N);
-    // cin>>n;
     for (int i = 0; i < N; i++)
-        // cin >> q[i];
         scanf("%d", &q[i]);
     quick_sort(0, N - 1);
     for (int i = 0; i < N; i++)
         printf("%d ", q[i]);
-        // cout << q[i] << " ";
     return 0;
 }

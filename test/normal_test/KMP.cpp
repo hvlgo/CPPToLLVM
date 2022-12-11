@@ -20,14 +20,7 @@ int main(){
 
     scanf("%d %d", &n, &p);
     scanf("%d %d", &m, &s);
-    // cin >> n >> p;
-    // cin >> m >> s;
-
-    // if (n > m) {
-    //     cout << "n is larger than m" << endl;
-    //     return -1;
-    // }
-
+    
     getNext(n);
     
     for(int i = 0, j = 0; i < m; i++){
@@ -35,7 +28,6 @@ int main(){
         if(s[i] == p[j])            j++;
         if(j == n){
             printf("%d ", i-n+1);
-            // cout << i - n + 1 << ' ';
             j = next[j - 1];
         }
     }

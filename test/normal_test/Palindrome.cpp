@@ -19,16 +19,12 @@ void isPalindrome() {
 	}
 	if (flag) 
 		printf("true\n");
-        // return true;
 	else 
 		printf("false\n");
-        // return false;
 }
 
 int main() {
 	scanf("%s", a);
-	// cin >> a;
 	isPalindrome();
-	// cout << isPalindrome(a);
 	return 0;
 }
