@@ -31,4 +31,4 @@
 * antlr4 -Dlanguage=Python3 ./grammar/cpp2llvmLexer.g4 ./grammar/cpp2llvmParser.g4 -Xexact-output-dir -o src
 
 ### run parser and get the abstract syntax tree
-python main.py \<inputfile>
+python main.py \<inputfile> \<outputfile>
