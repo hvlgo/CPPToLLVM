@@ -1,11 +1,11 @@
 int printf(char* a, ...);
 int scanf(char* a, ...);
 
-const int N=100000;
+int N;
 
-int q[N];
+int q[100];
 
-void quick_sort(int q[],int l,int r)
+void quick_sort(int l,int r)
 {
     int i = l - 1, j = r + 1;
     int x = q[(l+r)/2];
@@ -21,20 +21,20 @@ void quick_sort(int q[],int l,int r)
         }
             
     }
-    quick_sort(q, l, j);
-    quick_sort(q, j + 1, r);
+    quick_sort(l, j);
+    quick_sort(j + 1, r);
 }
     
 int main()
-{
-    int n;
-    scanf("%d", &n);
+{   
+    printf("enter N(<100):");
+    scanf("%d", &N);
     // cin>>n;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < N; i++)
         // cin >> q[i];
         scanf("%d", &q[i]);
-    quick_sort(q, 0, n - 1);
-    for (int i = 0; i < n; i++)
+    quick_sort(0, N - 1);
+    for (int i = 0; i < N; i++)
         printf("%d ", q[i]);
         // cout << q[i] << " ";
     return 0;

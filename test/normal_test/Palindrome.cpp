@@ -1,20 +1,34 @@
-#include<iostream>
-#include<string>
-#include<algorithm>
-using namespace std;
+int printf(char* a, ...);
+int scanf(char* a, ...);
 
-bool isPalindrome(string a) {
-    string b = a;
-	reverse(b.begin(), b.end());
-	if (a == b) 
-        return true;
+char a[100];
+
+void isPalindrome() {
+    int flag = 1;
+	int front = 0;
+	int back = 0;
+	while(a[back] != '\0')
+		back = back + 1;
+	back = back - 1;
+	while(front < back)
+	{
+		if(a[front] != a[back])
+			flag = 0;
+		front = front + 1;
+		back = back - 1;
+	}
+	if (flag) 
+		printf("true\n");
+        // return true;
 	else 
-        return false;
+		printf("false\n");
+        // return false;
 }
 
 int main() {
-	string a;
-	cin >> a;
-	cout << isPalindrome(a);
+	scanf("%s", a);
+	// cin >> a;
+	isPalindrome();
+	// cout << isPalindrome(a);
 	return 0;
 }

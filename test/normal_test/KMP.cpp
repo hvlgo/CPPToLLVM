@@ -1,9 +1,10 @@
 int printf(char* a, ...);
 int scanf(char* a, ...);
 
-const int N = 1e5 + 10, M = 1e6 + 10;
+char p[100], s[100];
+int next[100];
 
-void getNext(int n, char p[], int next[]){
+void getNext(int n){
     next[0] = 0;
     for(int j = 0, i = 1; i < n; i++){
         while(j && p[i] != p[j])    j = next[j - 1];
@@ -14,9 +15,11 @@ void getNext(int n, char p[], int next[]){
 
 
 int main(){
-    int n, m, next[N];
-    char p[N], s[M];
+    int n, m;
 
+
+    scanf("%d %d", &n, &p);
+    scanf("%d %d", &m, &s);
     // cin >> n >> p;
     // cin >> m >> s;
 
@@ -25,13 +28,14 @@ int main(){
     //     return -1;
     // }
 
-    getNext(n, p, next);
+    getNext(n);
     
     for(int i = 0, j = 0; i < m; i++){
         while(j && s[i] != p[j])    j = next[j - 1];
         if(s[i] == p[j])            j++;
         if(j == n){
-            cout << i - n + 1 << ' ';
+            printf("%d ", i-n+1);
+            // cout << i - n + 1 << ' ';
             j = next[j - 1];
         }
     }
