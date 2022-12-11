@@ -1,4 +1,4 @@
-// Generated from /mnt/d/programming/2022autumn/assembly_complie/CPPToLLVM/code/grammar/cpp2llvmLexer.g4 by ANTLR 4.9.2
+// Generated from d:\zfh\大三上\汇编与编译原理\编译大作业\CPPToLLVM\grammar\cpp2llvmLexer.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

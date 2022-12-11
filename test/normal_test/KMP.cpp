@@ -1,7 +1,8 @@
 int printf(char* a, ...);
 int scanf(char* a, ...);
 
-char p[100], s[100];
+char p[100];
+char s[100];
 int next[100];
 
 void getNext(int n){

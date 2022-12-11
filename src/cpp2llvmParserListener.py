@@ -8,6 +8,15 @@ else:
 # This class defines a complete listener for a parse tree produced by cpp2llvmParser.
 class cpp2llvmParserListener(ParseTreeListener):
 
+    # Enter a parse tree produced by cpp2llvmParser#literal.
+    def enterLiteral(self, ctx:cpp2llvmParser.LiteralContext):
+        pass
+
+    # Exit a parse tree produced by cpp2llvmParser#literal.
+    def exitLiteral(self, ctx:cpp2llvmParser.LiteralContext):
+        pass
+
+
     # Enter a parse tree produced by cpp2llvmParser#translationUnit.
     def enterTranslationUnit(self, ctx:cpp2llvmParser.TranslationUnitContext):
         pass
@@ -365,15 +374,6 @@ class cpp2llvmParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by cpp2llvmParser#voidTypeModifier.
     def exitVoidTypeModifier(self, ctx:cpp2llvmParser.VoidTypeModifierContext):
-        pass
-
-
-    # Enter a parse tree produced by cpp2llvmParser#literal.
-    def enterLiteral(self, ctx:cpp2llvmParser.LiteralContext):
-        pass
-
-    # Exit a parse tree produced by cpp2llvmParser#literal.
-    def exitLiteral(self, ctx:cpp2llvmParser.LiteralContext):
         pass
 
 
