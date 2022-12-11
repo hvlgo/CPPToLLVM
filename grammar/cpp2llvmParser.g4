@@ -6,12 +6,13 @@ options {
 
 translationUnit: declaration* EOF;
 /*Expressions*/
+stringLiteral: StringLiteral;
 
 constExpression : literal;
 
 leftExpression :
     Identifier
-    | Identifier (LSQUARE expression RSQUARE) 
+    | Identifier (LeftBracket expression RightBracket) 
     ;
 
 
@@ -19,78 +20,145 @@ expression :
     functionCall 
     | literal 
     | Identifier
-    | LPAREN expression RPAREN
-    | NOT expression
-    | SUB expression
-    | BITAND leftExpression
-    | expression MULT expression 
-    | expression DIV expression 
-    | expression MOD expression 
-    | expression ADD expression 
-    | expression SUB expression 
-    | expression LT expression
-    | expression GT expression
-    | expression LEQ expression
-    | expression GEQ expression
-    | expression EQ expression
-    | expression NOT_EQ expression
-    | expression BITOR expression
-    | expression BITAND expression
-    | expression XOR expression
-    | expression OR expression
-    | expression AND expression
-    | expression LSHIFT expression
-    | expression RSHIFT expression
-    | Identifier LSQUARE expression RSQUARE
-    | leftExpression ASSIGN expression
-    | leftExpression PLUS_PLUS
-    | leftExpression MINUS_MINUS;
+    | LeftParen expression RightParen
+    | Not expression
+    | Minus expression
+    | And leftExpression
+    | expression Star expression 
+    | expression Div expression 
+    | expression Mod expression 
+    | expression Plus expression 
+    | expression Minus expression 
+    | expression Less expression
+    | expression Greater expression
+    | expression LessEqual expression
+    | expression GreaterEqual expression
+    | expression Equal expression
+    | expression OrAssign expression
+    | expression Or expression
+    | expression And expression
+    | expression Caret expression
+    | expression OrOr expression
+    | expression AndAnd expression
+    | expression LeftShift expression
+    | expression RightShift expression
+    | Identifier LeftBracket expression RightBracket
+    | leftExpression Assign expression
+    | leftExpression PlusPlus
+    | leftExpression MinusMinus;
 
+/* Statements */
+functionCall : Identifier LeftParen (expression (Comma expression)*)? RightParen;
 
-/*Preprocessing directives*/
+condition: expression;
 
+statement:
+	expressionStatement
+	| compoundStatement
+	| selectionStatement
+	| iterationStatement
+	| jumpStatement
+	| variableDeclarator
+    | arrayDeclarator;
+
+expressionStatement: expression? Semi;
+
+compoundStatement: LeftBrace statement* RightBrace;
+
+caseStatement : Case constExpression Colon statement;
+
+selectionStatement:
+	If LeftParen condition RightParen statement (Else statement)?
+	| Switch LeftParen condition RightParen LeftBrace (caseStatement)* RightBrace;
+
+iterationStatement:
+	While LeftParen condition RightParen statement
+	| Do statement While LeftParen expression RightParen Semi
+	| For LeftParen (expression (Comma expression)*)? Semi expression? 
+		Semi (expression (Comma expression)*)? RightParen statement;
+
+jumpStatement:
+	(
+	Break
+	| Continue
+	| Return expression?
+	| Goto Identifier
+	) Semi;
+
+/*Declarations*/
+declaration:
+	variableDeclarator
+	| arrayDeclarator
+	| functionDeclarator;
+
+variableDeclarator: typeModifier variableDeclarationList Semi;
+
+variableDeclarationList:
+	variableDeclaration (Comma variableDeclaration)*;
+
+variableDeclaration:
+	varDeclWithoutInit
+	| varDeclWithConstInit
+	| varDeclWithNormalInit;
+
+varDeclWithoutInit: Identifier;
+
+varDeclWithConstInit: Identifier Assign constExpression;
+
+varDeclWithNormalInit: Identifier Assign expression;
+
+arrayDeclarator: normalArrayDeclaration | stringDeclaration;
+
+normalArrayDeclaration:
+	normalTypeModifier arrayName (
+		Assign LeftBrace arrayAssginExpressionList RightBrace
+	)? Semi;
+
+arrayAssginExpressionList: expression (Comma expression)*;
+
+stringDeclaration:
+	charTypeModifier arrayName (Assign stringLiteral)? Semi;
+
+arrayName: Identifier LeftBracket DecimalLiteral RightBracket;
+
+functionDeclarator: functionDeclaration | functionDefinition;
+
+functionDeclaration: functionHead Semi;
+
+functionDefinition: functionHead compoundStatement;
+
+functionHead:
+	typeModifier Identifier LeftParen functionParameterList? RightParen;
+
+functionParameterList:
+	functionParameter (Comma functionParameter)*;
+
+functionParameter:
+	pointerTypeModifier Identifier
+	| normalTypeModifier Identifier
+	| Ellipsis;
+
+typeModifier: pointerTypeModifier | normalTypeModifier;
+
+pointerTypeModifier: normalTypeModifier Star;
+
+normalTypeModifier:
+	integerTypeModifier
+	| realTypeModifier
+	| boolTypeModifier
+	| charTypeModifier
+	| voidTypeModifier;
+
+integerTypeModifier: Int | Long | Short | Long Long;
+
+realTypeModifier: Float | Double | Long Double;
+
+boolTypeModifier: Bool;
+
+charTypeModifier: Char;
+
+voidTypeModifier: Void;
 /*Lexer*/
-
-theOperator:
-	New (LeftBracket RightBracket)?
-	| Delete (LeftBracket RightBracket)?
-	| Plus
-	| Minus
-	| Star
-	| Div
-	| Mod
-	| Caret
-	| And
-	| Or
-	| Tilde
-	| Not
-	| Assign
-	| Greater
-	| Less
-	| GreaterEqual
-	| PlusAssign
-	| MinusAssign
-	| StarAssign
-	| ModAssign
-	| XorAssign
-	| AndAssign
-	| OrAssign
-	| Less Less
-	| Greater Greater
-	| RightShiftAssign
-	| LeftShiftAssign
-	| Equal
-	| NotEqual
-	| LessEqual
-	| AndAnd
-	| OrOr
-	| PlusPlus
-	| MinusMinus
-	| Comma
-	| ArrowStar
-	| Arrow
-	| LeftParen RightParen
-	| LeftBracket RightBracket;
 
 literal:
 	IntegerLiteral

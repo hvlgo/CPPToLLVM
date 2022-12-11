@@ -232,7 +232,11 @@ AndAssign: '&=';
 
 OrAssign: '|=';
 
+LeftShift: '<<';
+
 LeftShiftAssign: '<<=';
+
+RightShift: '>>';
 
 RightShiftAssign: '>>=';
 
