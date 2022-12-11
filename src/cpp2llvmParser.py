@@ -81,7 +81,7 @@ def serializedATN():
         5,101,0,0,153,188,3,8,4,17,154,155,10,15,0,0,155,156,5,116,0,0,156,
         188,3,8,4,16,157,158,10,14,0,0,158,159,5,117,0,0,159,188,3,8,4,15,
         160,161,10,13,0,0,161,162,5,114,0,0,162,188,3,8,4,14,163,164,10,
-        12,0,0,164,165,5,109,0,0,165,188,3,8,4,13,166,167,10,11,0,0,167,
+        12,0,0,164,165,5,115,0,0,165,188,3,8,4,13,166,167,10,11,0,0,167,
         168,5,96,0,0,168,188,3,8,4,12,169,170,10,10,0,0,170,171,5,95,0,0,
         171,188,3,8,4,11,172,173,10,9,0,0,173,174,5,94,0,0,174,188,3,8,4,
         10,175,176,10,8,0,0,176,177,5,119,0,0,177,188,3,8,4,9,178,179,10,
@@ -753,8 +753,8 @@ class cpp2llvmParser ( Parser ):
         def Equal(self):
             return self.getToken(cpp2llvmParser.Equal, 0)
 
-        def OrAssign(self):
-            return self.getToken(cpp2llvmParser.OrAssign, 0)
+        def NotEqual(self):
+            return self.getToken(cpp2llvmParser.NotEqual, 0)
 
         def Or(self):
             return self.getToken(cpp2llvmParser.Or, 0)
@@ -1029,7 +1029,7 @@ class cpp2llvmParser ( Parser ):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 12)")
                         self.state = 164
-                        self.match(cpp2llvmParser.OrAssign)
+                        self.match(cpp2llvmParser.NotEqual)
                         self.state = 165
                         self.expression(13)
                         pass

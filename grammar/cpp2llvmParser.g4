@@ -34,7 +34,7 @@ expression :
     | expression LessEqual expression
     | expression GreaterEqual expression
     | expression Equal expression
-    | expression OrAssign expression
+    | expression NotEqual expression
     | expression Or expression
     | expression And expression
     | expression Caret expression
