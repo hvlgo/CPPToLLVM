@@ -55,12 +55,20 @@ expression:
 	| leftExpression MinusMinus;
 
 /* Statements */
+functionCall:
+	Identifier LeftParen (expression (Comma expression)*)? RightParen;
+
 statement:
 	expressionStatement
 	| compoundStatement
-	| selectionStatement
-	| iterationStatement
-	| jumpStatement
+	| ifStatement
+	| switchStatement
+	| whileStatement
+	| doWhileStatement
+	| forStatement
+	| returnStatement
+	| breakStatement
+	| continueStatement
 	| variableDeclarator
 	| arrayDeclarator;
 
@@ -68,28 +76,41 @@ compoundStatement: LeftBrace statement* RightBrace;
 
 expressionStatement: expression? Semi;
 
-functionCall:
-	Identifier LeftParen (expression (Comma expression)*)? RightParen;
+// selectionStatement:
+// 	If LeftParen condition RightParen statement (Else statement)?
+// 	| Switch LeftParen condition RightParen LeftBrace (
+// 		caseStatement
+// 	)* RightBrace;
 
-selectionStatement:
-	If LeftParen condition RightParen statement (Else statement)?
-	| Switch LeftParen condition RightParen LeftBrace (
-		caseStatement
-	)* RightBrace;
+ifStatement : If LeftParen expression RightParen statement (Else statement)?;
 
-condition: expression;
+switchStatement : Switch LeftParen expression RightParen LeftBrace (caseStatement)* RightBrace;
 
 caseStatement: Case constExpression Colon statement;
 
-iterationStatement:
-	While LeftParen condition RightParen statement
-	| Do statement While LeftParen expression RightParen Semi
-	| For LeftParen (expression (Comma expression)*)? Semi expression? Semi (
-		expression (Comma expression)*
-	)? RightParen statement;
+// iterationStatement:
+// 	While LeftParen condition RightParen statement
+// 	| Do statement While LeftParen expression RightParen Semi
+// 	| For LeftParen (expression (Comma expression)*)? Semi expression? Semi (
+// 		expression (Comma expression)*
+// 	)? RightParen statement;
 
-jumpStatement:
-	(Break | Continue | Return expression? | Goto Identifier) Semi;
+whileStatement : While LeftParen expression RightParen statement;
+
+doWhileStatement : Do statement While LeftParen expression RightParen Semi;
+
+forStatement : For LeftParen forExprSet? Semi expression? Semi forExprSet? RightParen statement;
+
+forExprSet: expression (Comma expression)*;
+
+// jumpStatement:
+// 	(Break | Continue | Return expression? | Goto Identifier) Semi;
+
+returnStatement : Return expression? Semi;
+
+breakStatement : Break Semi;
+
+continueStatement : Continue Semi;
 
 /*Declarations*/
 declaration:
