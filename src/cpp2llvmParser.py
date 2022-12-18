@@ -16,107 +16,107 @@ def serializedATN():
         20,7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,
         26,2,27,7,27,2,28,7,28,2,29,7,29,2,30,7,30,2,31,7,31,2,32,7,32,2,
         33,7,33,2,34,7,34,2,35,7,35,2,36,7,36,2,37,7,37,2,38,7,38,2,39,7,
-        39,2,40,7,40,1,0,1,0,1,1,5,1,86,8,1,10,1,12,1,89,9,1,1,1,1,1,1,2,
+        39,2,40,7,40,1,0,5,0,84,8,0,10,0,12,0,87,9,0,1,0,1,0,1,1,1,1,1,2,
         1,2,1,3,1,3,1,4,1,4,1,4,1,4,1,4,1,4,3,4,103,8,4,1,5,1,5,1,5,1,5,
         1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,
         1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,3,5,134,8,5,1,5,1,5,1,5,1,5,
         1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,
         1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,
         1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,
-        1,5,1,5,5,5,190,8,5,10,5,12,5,193,9,5,1,6,1,6,1,6,1,6,1,6,5,6,200,
-        8,6,10,6,12,6,203,9,6,3,6,205,8,6,1,6,1,6,1,7,1,7,1,8,1,8,1,8,1,
-        8,1,8,1,8,1,8,3,8,218,8,8,1,9,3,9,221,8,9,1,9,1,9,1,10,1,10,5,10,
-        227,8,10,10,10,12,10,230,9,10,1,10,1,10,1,11,1,11,1,11,1,11,1,11,
-        1,12,1,12,1,12,1,12,1,12,1,12,1,12,3,12,246,8,12,1,12,1,12,1,12,
-        1,12,1,12,1,12,5,12,254,8,12,10,12,12,12,257,9,12,1,12,1,12,3,12,
-        261,8,12,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,
-        1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,5,13,282,8,13,10,13,12,13,
-        285,9,13,3,13,287,8,13,1,13,1,13,3,13,291,8,13,1,13,1,13,1,13,1,
-        13,5,13,297,8,13,10,13,12,13,300,9,13,3,13,302,8,13,1,13,1,13,3,
-        13,306,8,13,1,14,1,14,1,14,1,14,3,14,312,8,14,1,14,1,14,3,14,316,
-        8,14,1,14,1,14,1,15,1,15,1,15,3,15,323,8,15,1,16,1,16,1,16,1,16,
-        1,17,1,17,1,17,5,17,332,8,17,10,17,12,17,335,9,17,1,18,1,18,1,18,
-        3,18,340,8,18,1,19,1,19,1,20,1,20,1,20,1,20,1,21,1,21,1,21,1,21,
-        1,22,1,22,3,22,354,8,22,1,23,1,23,1,23,1,23,1,23,1,23,1,23,3,23,
-        363,8,23,1,23,1,23,1,24,1,24,1,24,5,24,370,8,24,10,24,12,24,373,
-        9,24,1,25,1,25,1,25,1,25,3,25,379,8,25,1,25,1,25,1,26,1,26,1,26,
-        1,26,1,26,1,27,1,27,3,27,390,8,27,1,28,1,28,1,28,1,29,1,29,1,29,
-        1,30,1,30,1,30,1,30,3,30,402,8,30,1,30,1,30,1,31,1,31,1,31,5,31,
-        409,8,31,10,31,12,31,412,9,31,1,32,1,32,1,32,1,32,1,32,1,32,1,32,
-        3,32,421,8,32,1,33,1,33,3,33,425,8,33,1,34,1,34,1,34,1,35,1,35,1,
-        35,1,35,1,35,3,35,435,8,35,1,36,1,36,1,36,1,36,1,36,3,36,442,8,36,
-        1,37,1,37,1,37,1,37,3,37,448,8,37,1,38,1,38,1,39,1,39,1,40,1,40,
-        1,40,0,1,10,41,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,
-        36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,
-        80,0,1,1,0,1,6,492,0,82,1,0,0,0,2,87,1,0,0,0,4,92,1,0,0,0,6,94,1,
-        0,0,0,8,102,1,0,0,0,10,133,1,0,0,0,12,194,1,0,0,0,14,208,1,0,0,0,
-        16,217,1,0,0,0,18,220,1,0,0,0,20,224,1,0,0,0,22,233,1,0,0,0,24,260,
-        1,0,0,0,26,305,1,0,0,0,28,315,1,0,0,0,30,322,1,0,0,0,32,324,1,0,
-        0,0,34,328,1,0,0,0,36,339,1,0,0,0,38,341,1,0,0,0,40,343,1,0,0,0,
-        42,347,1,0,0,0,44,353,1,0,0,0,46,355,1,0,0,0,48,366,1,0,0,0,50,374,
-        1,0,0,0,52,382,1,0,0,0,54,389,1,0,0,0,56,391,1,0,0,0,58,394,1,0,
-        0,0,60,397,1,0,0,0,62,405,1,0,0,0,64,420,1,0,0,0,66,424,1,0,0,0,
-        68,426,1,0,0,0,70,434,1,0,0,0,72,441,1,0,0,0,74,447,1,0,0,0,76,449,
-        1,0,0,0,78,451,1,0,0,0,80,453,1,0,0,0,82,83,7,0,0,0,83,1,1,0,0,0,
-        84,86,3,30,15,0,85,84,1,0,0,0,86,89,1,0,0,0,87,85,1,0,0,0,87,88,
-        1,0,0,0,88,90,1,0,0,0,89,87,1,0,0,0,90,91,5,0,0,1,91,3,1,0,0,0,92,
-        93,5,4,0,0,93,5,1,0,0,0,94,95,3,0,0,0,95,7,1,0,0,0,96,103,5,132,
-        0,0,97,98,5,132,0,0,98,99,5,85,0,0,99,100,3,10,5,0,100,101,5,86,
-        0,0,101,103,1,0,0,0,102,96,1,0,0,0,102,97,1,0,0,0,103,9,1,0,0,0,
-        104,105,6,5,-1,0,105,134,3,12,6,0,106,134,3,0,0,0,107,134,5,132,
-        0,0,108,109,5,83,0,0,109,110,3,10,5,0,110,111,5,84,0,0,111,134,1,
-        0,0,0,112,113,5,98,0,0,113,134,3,10,5,25,114,115,5,90,0,0,115,134,
-        3,10,5,24,116,117,5,95,0,0,117,134,3,8,4,0,118,119,5,132,0,0,119,
-        120,5,85,0,0,120,121,3,10,5,0,121,122,5,86,0,0,122,134,1,0,0,0,123,
-        124,3,8,4,0,124,125,5,99,0,0,125,126,3,10,5,3,126,134,1,0,0,0,127,
-        128,3,8,4,0,128,129,5,120,0,0,129,134,1,0,0,0,130,131,3,8,4,0,131,
-        132,5,121,0,0,132,134,1,0,0,0,133,104,1,0,0,0,133,106,1,0,0,0,133,
-        107,1,0,0,0,133,108,1,0,0,0,133,112,1,0,0,0,133,114,1,0,0,0,133,
-        116,1,0,0,0,133,118,1,0,0,0,133,123,1,0,0,0,133,127,1,0,0,0,133,
-        130,1,0,0,0,134,191,1,0,0,0,135,136,10,22,0,0,136,137,5,91,0,0,137,
-        190,3,10,5,23,138,139,10,21,0,0,139,140,5,92,0,0,140,190,3,10,5,
-        22,141,142,10,20,0,0,142,143,5,93,0,0,143,190,3,10,5,21,144,145,
-        10,19,0,0,145,146,5,89,0,0,146,190,3,10,5,20,147,148,10,18,0,0,148,
-        149,5,90,0,0,149,190,3,10,5,19,150,151,10,17,0,0,151,152,5,100,0,
-        0,152,190,3,10,5,18,153,154,10,16,0,0,154,155,5,101,0,0,155,190,
-        3,10,5,17,156,157,10,15,0,0,157,158,5,116,0,0,158,190,3,10,5,16,
-        159,160,10,14,0,0,160,161,5,117,0,0,161,190,3,10,5,15,162,163,10,
-        13,0,0,163,164,5,114,0,0,164,190,3,10,5,14,165,166,10,12,0,0,166,
-        167,5,115,0,0,167,190,3,10,5,13,168,169,10,11,0,0,169,170,5,96,0,
-        0,170,190,3,10,5,12,171,172,10,10,0,0,172,173,5,95,0,0,173,190,3,
-        10,5,11,174,175,10,9,0,0,175,176,5,94,0,0,176,190,3,10,5,10,177,
-        178,10,8,0,0,178,179,5,119,0,0,179,190,3,10,5,9,180,181,10,7,0,0,
-        181,182,5,118,0,0,182,190,3,10,5,8,183,184,10,6,0,0,184,185,5,110,
-        0,0,185,190,3,10,5,7,186,187,10,5,0,0,187,188,5,112,0,0,188,190,
-        3,10,5,6,189,135,1,0,0,0,189,138,1,0,0,0,189,141,1,0,0,0,189,144,
-        1,0,0,0,189,147,1,0,0,0,189,150,1,0,0,0,189,153,1,0,0,0,189,156,
-        1,0,0,0,189,159,1,0,0,0,189,162,1,0,0,0,189,165,1,0,0,0,189,168,
-        1,0,0,0,189,171,1,0,0,0,189,174,1,0,0,0,189,177,1,0,0,0,189,180,
-        1,0,0,0,189,183,1,0,0,0,189,186,1,0,0,0,190,193,1,0,0,0,191,189,
-        1,0,0,0,191,192,1,0,0,0,192,11,1,0,0,0,193,191,1,0,0,0,194,195,5,
-        132,0,0,195,204,5,83,0,0,196,201,3,10,5,0,197,198,5,122,0,0,198,
-        200,3,10,5,0,199,197,1,0,0,0,200,203,1,0,0,0,201,199,1,0,0,0,201,
-        202,1,0,0,0,202,205,1,0,0,0,203,201,1,0,0,0,204,196,1,0,0,0,204,
-        205,1,0,0,0,205,206,1,0,0,0,206,207,5,84,0,0,207,13,1,0,0,0,208,
-        209,3,10,5,0,209,15,1,0,0,0,210,218,3,18,9,0,211,218,3,20,10,0,212,
-        218,3,24,12,0,213,218,3,26,13,0,214,218,3,28,14,0,215,218,3,32,16,
-        0,216,218,3,44,22,0,217,210,1,0,0,0,217,211,1,0,0,0,217,212,1,0,
-        0,0,217,213,1,0,0,0,217,214,1,0,0,0,217,215,1,0,0,0,217,216,1,0,
-        0,0,218,17,1,0,0,0,219,221,3,10,5,0,220,219,1,0,0,0,220,221,1,0,
-        0,0,221,222,1,0,0,0,222,223,5,128,0,0,223,19,1,0,0,0,224,228,5,87,
-        0,0,225,227,3,16,8,0,226,225,1,0,0,0,227,230,1,0,0,0,228,226,1,0,
-        0,0,228,229,1,0,0,0,229,231,1,0,0,0,230,228,1,0,0,0,231,232,5,88,
-        0,0,232,21,1,0,0,0,233,234,5,14,0,0,234,235,3,6,3,0,235,236,5,126,
-        0,0,236,237,3,16,8,0,237,23,1,0,0,0,238,239,5,41,0,0,239,240,5,83,
-        0,0,240,241,3,14,7,0,241,242,5,84,0,0,242,245,3,16,8,0,243,244,5,
-        30,0,0,244,246,3,16,8,0,245,243,1,0,0,0,245,246,1,0,0,0,246,261,
-        1,0,0,0,247,248,5,65,0,0,248,249,5,83,0,0,249,250,3,14,7,0,250,251,
-        5,84,0,0,251,255,5,87,0,0,252,254,3,22,11,0,253,252,1,0,0,0,254,
-        257,1,0,0,0,255,253,1,0,0,0,255,256,1,0,0,0,256,258,1,0,0,0,257,
-        255,1,0,0,0,258,259,5,88,0,0,259,261,1,0,0,0,260,238,1,0,0,0,260,
-        247,1,0,0,0,261,25,1,0,0,0,262,263,5,82,0,0,263,264,5,83,0,0,264,
-        265,3,14,7,0,265,266,5,84,0,0,266,267,3,16,8,0,267,306,1,0,0,0,268,
-        269,5,27,0,0,269,270,3,16,8,0,270,271,5,82,0,0,271,272,5,83,0,0,
+        1,5,1,5,5,5,190,8,5,10,5,12,5,193,9,5,1,6,1,6,1,6,1,6,1,6,1,6,1,
+        6,3,6,202,8,6,1,7,1,7,5,7,206,8,7,10,7,12,7,209,9,7,1,7,1,7,1,8,
+        3,8,214,8,8,1,8,1,8,1,9,1,9,1,9,1,9,1,9,5,9,223,8,9,10,9,12,9,226,
+        9,9,3,9,228,8,9,1,9,1,9,1,10,1,10,1,10,1,10,1,10,1,10,1,10,3,10,
+        239,8,10,1,10,1,10,1,10,1,10,1,10,1,10,5,10,247,8,10,10,10,12,10,
+        250,9,10,1,10,1,10,3,10,254,8,10,1,11,1,11,1,12,1,12,1,12,1,12,1,
+        12,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,
+        13,1,13,1,13,1,13,1,13,1,13,1,13,5,13,282,8,13,10,13,12,13,285,9,
+        13,3,13,287,8,13,1,13,1,13,3,13,291,8,13,1,13,1,13,1,13,1,13,5,13,
+        297,8,13,10,13,12,13,300,9,13,3,13,302,8,13,1,13,1,13,3,13,306,8,
+        13,1,14,1,14,1,14,1,14,3,14,312,8,14,1,14,1,14,3,14,316,8,14,1,14,
+        1,14,1,15,1,15,1,15,3,15,323,8,15,1,16,1,16,1,16,1,16,1,17,1,17,
+        1,17,5,17,332,8,17,10,17,12,17,335,9,17,1,18,1,18,1,18,3,18,340,
+        8,18,1,19,1,19,1,20,1,20,1,20,1,20,1,21,1,21,1,21,1,21,1,22,1,22,
+        3,22,354,8,22,1,23,1,23,1,23,1,23,1,23,1,23,1,23,3,23,363,8,23,1,
+        23,1,23,1,24,1,24,1,24,5,24,370,8,24,10,24,12,24,373,9,24,1,25,1,
+        25,1,25,1,25,3,25,379,8,25,1,25,1,25,1,26,1,26,1,26,1,26,1,26,1,
+        27,1,27,3,27,390,8,27,1,28,1,28,1,28,1,29,1,29,1,29,1,30,1,30,1,
+        30,1,30,3,30,402,8,30,1,30,1,30,1,31,1,31,1,31,5,31,409,8,31,10,
+        31,12,31,412,9,31,1,32,1,32,1,32,1,32,1,32,1,32,1,32,3,32,421,8,
+        32,1,33,1,33,3,33,425,8,33,1,34,1,34,1,34,1,35,1,35,1,35,1,35,1,
+        35,3,35,435,8,35,1,36,1,36,1,36,1,36,1,36,3,36,442,8,36,1,37,1,37,
+        1,37,1,37,3,37,448,8,37,1,38,1,38,1,39,1,39,1,40,1,40,1,40,0,1,10,
+        41,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,
+        44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,0,1,1,0,
+        1,6,492,0,85,1,0,0,0,2,90,1,0,0,0,4,92,1,0,0,0,6,94,1,0,0,0,8,102,
+        1,0,0,0,10,133,1,0,0,0,12,201,1,0,0,0,14,203,1,0,0,0,16,213,1,0,
+        0,0,18,217,1,0,0,0,20,253,1,0,0,0,22,255,1,0,0,0,24,257,1,0,0,0,
+        26,305,1,0,0,0,28,315,1,0,0,0,30,322,1,0,0,0,32,324,1,0,0,0,34,328,
+        1,0,0,0,36,339,1,0,0,0,38,341,1,0,0,0,40,343,1,0,0,0,42,347,1,0,
+        0,0,44,353,1,0,0,0,46,355,1,0,0,0,48,366,1,0,0,0,50,374,1,0,0,0,
+        52,382,1,0,0,0,54,389,1,0,0,0,56,391,1,0,0,0,58,394,1,0,0,0,60,397,
+        1,0,0,0,62,405,1,0,0,0,64,420,1,0,0,0,66,424,1,0,0,0,68,426,1,0,
+        0,0,70,434,1,0,0,0,72,441,1,0,0,0,74,447,1,0,0,0,76,449,1,0,0,0,
+        78,451,1,0,0,0,80,453,1,0,0,0,82,84,3,30,15,0,83,82,1,0,0,0,84,87,
+        1,0,0,0,85,83,1,0,0,0,85,86,1,0,0,0,86,88,1,0,0,0,87,85,1,0,0,0,
+        88,89,5,0,0,1,89,1,1,0,0,0,90,91,7,0,0,0,91,3,1,0,0,0,92,93,5,4,
+        0,0,93,5,1,0,0,0,94,95,3,2,1,0,95,7,1,0,0,0,96,103,5,132,0,0,97,
+        98,5,132,0,0,98,99,5,85,0,0,99,100,3,10,5,0,100,101,5,86,0,0,101,
+        103,1,0,0,0,102,96,1,0,0,0,102,97,1,0,0,0,103,9,1,0,0,0,104,105,
+        6,5,-1,0,105,134,3,18,9,0,106,134,3,2,1,0,107,134,5,132,0,0,108,
+        109,5,83,0,0,109,110,3,10,5,0,110,111,5,84,0,0,111,134,1,0,0,0,112,
+        113,5,98,0,0,113,134,3,10,5,25,114,115,5,90,0,0,115,134,3,10,5,24,
+        116,117,5,95,0,0,117,134,3,8,4,0,118,119,5,132,0,0,119,120,5,85,
+        0,0,120,121,3,10,5,0,121,122,5,86,0,0,122,134,1,0,0,0,123,124,3,
+        8,4,0,124,125,5,99,0,0,125,126,3,10,5,3,126,134,1,0,0,0,127,128,
+        3,8,4,0,128,129,5,120,0,0,129,134,1,0,0,0,130,131,3,8,4,0,131,132,
+        5,121,0,0,132,134,1,0,0,0,133,104,1,0,0,0,133,106,1,0,0,0,133,107,
+        1,0,0,0,133,108,1,0,0,0,133,112,1,0,0,0,133,114,1,0,0,0,133,116,
+        1,0,0,0,133,118,1,0,0,0,133,123,1,0,0,0,133,127,1,0,0,0,133,130,
+        1,0,0,0,134,191,1,0,0,0,135,136,10,22,0,0,136,137,5,91,0,0,137,190,
+        3,10,5,23,138,139,10,21,0,0,139,140,5,92,0,0,140,190,3,10,5,22,141,
+        142,10,20,0,0,142,143,5,93,0,0,143,190,3,10,5,21,144,145,10,19,0,
+        0,145,146,5,89,0,0,146,190,3,10,5,20,147,148,10,18,0,0,148,149,5,
+        90,0,0,149,190,3,10,5,19,150,151,10,17,0,0,151,152,5,100,0,0,152,
+        190,3,10,5,18,153,154,10,16,0,0,154,155,5,101,0,0,155,190,3,10,5,
+        17,156,157,10,15,0,0,157,158,5,116,0,0,158,190,3,10,5,16,159,160,
+        10,14,0,0,160,161,5,117,0,0,161,190,3,10,5,15,162,163,10,13,0,0,
+        163,164,5,114,0,0,164,190,3,10,5,14,165,166,10,12,0,0,166,167,5,
+        115,0,0,167,190,3,10,5,13,168,169,10,11,0,0,169,170,5,96,0,0,170,
+        190,3,10,5,12,171,172,10,10,0,0,172,173,5,95,0,0,173,190,3,10,5,
+        11,174,175,10,9,0,0,175,176,5,94,0,0,176,190,3,10,5,10,177,178,10,
+        8,0,0,178,179,5,119,0,0,179,190,3,10,5,9,180,181,10,7,0,0,181,182,
+        5,118,0,0,182,190,3,10,5,8,183,184,10,6,0,0,184,185,5,110,0,0,185,
+        190,3,10,5,7,186,187,10,5,0,0,187,188,5,112,0,0,188,190,3,10,5,6,
+        189,135,1,0,0,0,189,138,1,0,0,0,189,141,1,0,0,0,189,144,1,0,0,0,
+        189,147,1,0,0,0,189,150,1,0,0,0,189,153,1,0,0,0,189,156,1,0,0,0,
+        189,159,1,0,0,0,189,162,1,0,0,0,189,165,1,0,0,0,189,168,1,0,0,0,
+        189,171,1,0,0,0,189,174,1,0,0,0,189,177,1,0,0,0,189,180,1,0,0,0,
+        189,183,1,0,0,0,189,186,1,0,0,0,190,193,1,0,0,0,191,189,1,0,0,0,
+        191,192,1,0,0,0,192,11,1,0,0,0,193,191,1,0,0,0,194,202,3,16,8,0,
+        195,202,3,14,7,0,196,202,3,20,10,0,197,202,3,26,13,0,198,202,3,28,
+        14,0,199,202,3,32,16,0,200,202,3,44,22,0,201,194,1,0,0,0,201,195,
+        1,0,0,0,201,196,1,0,0,0,201,197,1,0,0,0,201,198,1,0,0,0,201,199,
+        1,0,0,0,201,200,1,0,0,0,202,13,1,0,0,0,203,207,5,87,0,0,204,206,
+        3,12,6,0,205,204,1,0,0,0,206,209,1,0,0,0,207,205,1,0,0,0,207,208,
+        1,0,0,0,208,210,1,0,0,0,209,207,1,0,0,0,210,211,5,88,0,0,211,15,
+        1,0,0,0,212,214,3,10,5,0,213,212,1,0,0,0,213,214,1,0,0,0,214,215,
+        1,0,0,0,215,216,5,128,0,0,216,17,1,0,0,0,217,218,5,132,0,0,218,227,
+        5,83,0,0,219,224,3,10,5,0,220,221,5,122,0,0,221,223,3,10,5,0,222,
+        220,1,0,0,0,223,226,1,0,0,0,224,222,1,0,0,0,224,225,1,0,0,0,225,
+        228,1,0,0,0,226,224,1,0,0,0,227,219,1,0,0,0,227,228,1,0,0,0,228,
+        229,1,0,0,0,229,230,5,84,0,0,230,19,1,0,0,0,231,232,5,41,0,0,232,
+        233,5,83,0,0,233,234,3,22,11,0,234,235,5,84,0,0,235,238,3,12,6,0,
+        236,237,5,30,0,0,237,239,3,12,6,0,238,236,1,0,0,0,238,239,1,0,0,
+        0,239,254,1,0,0,0,240,241,5,65,0,0,241,242,5,83,0,0,242,243,3,22,
+        11,0,243,244,5,84,0,0,244,248,5,87,0,0,245,247,3,24,12,0,246,245,
+        1,0,0,0,247,250,1,0,0,0,248,246,1,0,0,0,248,249,1,0,0,0,249,251,
+        1,0,0,0,250,248,1,0,0,0,251,252,5,88,0,0,252,254,1,0,0,0,253,231,
+        1,0,0,0,253,240,1,0,0,0,254,21,1,0,0,0,255,256,3,10,5,0,256,23,1,
+        0,0,0,257,258,5,14,0,0,258,259,3,6,3,0,259,260,5,126,0,0,260,261,
+        3,12,6,0,261,25,1,0,0,0,262,263,5,82,0,0,263,264,5,83,0,0,264,265,
+        3,22,11,0,265,266,5,84,0,0,266,267,3,12,6,0,267,306,1,0,0,0,268,
+        269,5,27,0,0,269,270,3,12,6,0,270,271,5,82,0,0,271,272,5,83,0,0,
         272,273,3,10,5,0,273,274,5,84,0,0,274,275,5,128,0,0,275,306,1,0,
         0,0,276,277,5,38,0,0,277,286,5,83,0,0,278,283,3,10,5,0,279,280,5,
         122,0,0,280,282,3,10,5,0,281,279,1,0,0,0,282,285,1,0,0,0,283,281,
@@ -126,7 +126,7 @@ def serializedATN():
         5,128,0,0,293,298,3,10,5,0,294,295,5,122,0,0,295,297,3,10,5,0,296,
         294,1,0,0,0,297,300,1,0,0,0,298,296,1,0,0,0,298,299,1,0,0,0,299,
         302,1,0,0,0,300,298,1,0,0,0,301,293,1,0,0,0,301,302,1,0,0,0,302,
-        303,1,0,0,0,303,304,5,84,0,0,304,306,3,16,8,0,305,262,1,0,0,0,305,
+        303,1,0,0,0,303,304,5,84,0,0,304,306,3,12,6,0,305,262,1,0,0,0,305,
         268,1,0,0,0,305,276,1,0,0,0,306,27,1,0,0,0,307,316,5,13,0,0,308,
         316,5,23,0,0,309,311,5,57,0,0,310,312,3,10,5,0,311,310,1,0,0,0,311,
         312,1,0,0,0,312,316,1,0,0,0,313,314,5,40,0,0,314,316,5,132,0,0,315,
@@ -153,7 +153,7 @@ def serializedATN():
         1,0,0,0,382,383,5,132,0,0,383,384,5,85,0,0,384,385,5,1,0,0,385,386,
         5,86,0,0,386,53,1,0,0,0,387,390,3,56,28,0,388,390,3,58,29,0,389,
         387,1,0,0,0,389,388,1,0,0,0,390,55,1,0,0,0,391,392,3,60,30,0,392,
-        393,5,128,0,0,393,57,1,0,0,0,394,395,3,60,30,0,395,396,3,20,10,0,
+        393,5,128,0,0,393,57,1,0,0,0,394,395,3,60,30,0,395,396,3,14,7,0,
         396,59,1,0,0,0,397,398,3,66,33,0,398,399,5,132,0,0,399,401,5,83,
         0,0,400,402,3,62,31,0,401,400,1,0,0,0,401,402,1,0,0,0,402,403,1,
         0,0,0,403,404,5,84,0,0,404,61,1,0,0,0,405,410,3,64,32,0,406,407,
@@ -172,8 +172,8 @@ def serializedATN():
         73,1,0,0,0,443,448,5,37,0,0,444,448,5,28,0,0,445,446,5,44,0,0,446,
         448,5,28,0,0,447,443,1,0,0,0,447,444,1,0,0,0,447,445,1,0,0,0,448,
         75,1,0,0,0,449,450,5,12,0,0,450,77,1,0,0,0,451,452,5,16,0,0,452,
-        79,1,0,0,0,453,454,5,79,0,0,454,81,1,0,0,0,36,87,102,133,189,191,
-        201,204,217,220,228,245,255,260,283,286,290,298,301,305,311,315,
+        79,1,0,0,0,453,454,5,79,0,0,454,81,1,0,0,0,36,85,102,133,189,191,
+        201,207,213,224,227,238,248,253,283,286,290,298,301,305,311,315,
         322,333,339,353,362,371,378,389,401,410,420,424,434,441,447
     ]
 
@@ -245,19 +245,19 @@ class cpp2llvmParser ( Parser ):
                       "BinaryLiteral", "Integersuffix", "Whitespace", "Newline", 
                       "BlockComment", "LineComment" ]
 
-    RULE_literal = 0
-    RULE_translationUnit = 1
+    RULE_translationUnit = 0
+    RULE_literal = 1
     RULE_stringLiteral = 2
     RULE_constExpression = 3
     RULE_leftExpression = 4
     RULE_expression = 5
-    RULE_functionCall = 6
-    RULE_condition = 7
-    RULE_statement = 8
-    RULE_expressionStatement = 9
-    RULE_compoundStatement = 10
-    RULE_caseStatement = 11
-    RULE_selectionStatement = 12
+    RULE_statement = 6
+    RULE_compoundStatement = 7
+    RULE_expressionStatement = 8
+    RULE_functionCall = 9
+    RULE_selectionStatement = 10
+    RULE_condition = 11
+    RULE_caseStatement = 12
     RULE_iterationStatement = 13
     RULE_jumpStatement = 14
     RULE_declaration = 15
@@ -287,20 +287,19 @@ class cpp2llvmParser ( Parser ):
     RULE_charTypeModifier = 39
     RULE_voidTypeModifier = 40
 
-    ruleNames =  [ "literal", "translationUnit", "stringLiteral", "constExpression", 
-                   "leftExpression", "expression", "functionCall", "condition", 
-                   "statement", "expressionStatement", "compoundStatement", 
-                   "caseStatement", "selectionStatement", "iterationStatement", 
-                   "jumpStatement", "declaration", "variableDeclarator", 
-                   "variableDeclarationList", "variableDeclaration", "varDeclWithoutInit", 
-                   "varDeclWithConstInit", "varDeclWithNormalInit", "arrayDeclarator", 
-                   "normalArrayDeclaration", "arrayAssginExpressionList", 
-                   "stringDeclaration", "arrayName", "functionDeclarator", 
-                   "functionDeclaration", "functionDefinition", "functionHead", 
-                   "functionParameterList", "functionParameter", "typeModifier", 
-                   "pointerTypeModifier", "normalTypeModifier", "integerTypeModifier", 
-                   "realTypeModifier", "boolTypeModifier", "charTypeModifier", 
-                   "voidTypeModifier" ]
+    ruleNames =  [ "translationUnit", "literal", "stringLiteral", "constExpression", 
+                   "leftExpression", "expression", "statement", "compoundStatement", 
+                   "expressionStatement", "functionCall", "selectionStatement", 
+                   "condition", "caseStatement", "iterationStatement", "jumpStatement", 
+                   "declaration", "variableDeclarator", "variableDeclarationList", 
+                   "variableDeclaration", "varDeclWithoutInit", "varDeclWithConstInit", 
+                   "varDeclWithNormalInit", "arrayDeclarator", "normalArrayDeclaration", 
+                   "arrayAssginExpressionList", "stringDeclaration", "arrayName", 
+                   "functionDeclarator", "functionDeclaration", "functionDefinition", 
+                   "functionHead", "functionParameterList", "functionParameter", 
+                   "typeModifier", "pointerTypeModifier", "normalTypeModifier", 
+                   "integerTypeModifier", "realTypeModifier", "boolTypeModifier", 
+                   "charTypeModifier", "voidTypeModifier" ]
 
     EOF = Token.EOF
     IntegerLiteral=1
@@ -454,6 +453,65 @@ class cpp2llvmParser ( Parser ):
 
 
 
+    class TranslationUnitContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def EOF(self):
+            return self.getToken(cpp2llvmParser.EOF, 0)
+
+        def declaration(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(cpp2llvmParser.DeclarationContext)
+            else:
+                return self.getTypedRuleContext(cpp2llvmParser.DeclarationContext,i)
+
+
+        def getRuleIndex(self):
+            return cpp2llvmParser.RULE_translationUnit
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTranslationUnit" ):
+                listener.enterTranslationUnit(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTranslationUnit" ):
+                listener.exitTranslationUnit(self)
+
+
+
+
+    def translationUnit(self):
+
+        localctx = cpp2llvmParser.TranslationUnitContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 0, self.RULE_translationUnit)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 85
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while ((_la) & ~0x3f) == 0 and ((1 << _la) & 288256902138236928) != 0 or _la==79:
+                self.state = 82
+                self.declaration()
+                self.state = 87
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+            self.state = 88
+            self.match(cpp2llvmParser.EOF)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
     class LiteralContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -496,76 +554,17 @@ class cpp2llvmParser ( Parser ):
     def literal(self):
 
         localctx = cpp2llvmParser.LiteralContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 0, self.RULE_literal)
+        self.enterRule(localctx, 2, self.RULE_literal)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 82
+            self.state = 90
             _la = self._input.LA(1)
             if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 126) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class TranslationUnitContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def EOF(self):
-            return self.getToken(cpp2llvmParser.EOF, 0)
-
-        def declaration(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(cpp2llvmParser.DeclarationContext)
-            else:
-                return self.getTypedRuleContext(cpp2llvmParser.DeclarationContext,i)
-
-
-        def getRuleIndex(self):
-            return cpp2llvmParser.RULE_translationUnit
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTranslationUnit" ):
-                listener.enterTranslationUnit(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTranslationUnit" ):
-                listener.exitTranslationUnit(self)
-
-
-
-
-    def translationUnit(self):
-
-        localctx = cpp2llvmParser.TranslationUnitContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 2, self.RULE_translationUnit)
-        self._la = 0 # Token type
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 87
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            while ((_la) & ~0x3f) == 0 and ((1 << _la) & 288256902138236928) != 0 or _la==79:
-                self.state = 84
-                self.declaration()
-                self.state = 89
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-
-            self.state = 90
-            self.match(cpp2llvmParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1201,133 +1200,6 @@ class cpp2llvmParser ( Parser ):
         return localctx
 
 
-    class FunctionCallContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def Identifier(self):
-            return self.getToken(cpp2llvmParser.Identifier, 0)
-
-        def LeftParen(self):
-            return self.getToken(cpp2llvmParser.LeftParen, 0)
-
-        def RightParen(self):
-            return self.getToken(cpp2llvmParser.RightParen, 0)
-
-        def expression(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(cpp2llvmParser.ExpressionContext)
-            else:
-                return self.getTypedRuleContext(cpp2llvmParser.ExpressionContext,i)
-
-
-        def Comma(self, i:int=None):
-            if i is None:
-                return self.getTokens(cpp2llvmParser.Comma)
-            else:
-                return self.getToken(cpp2llvmParser.Comma, i)
-
-        def getRuleIndex(self):
-            return cpp2llvmParser.RULE_functionCall
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFunctionCall" ):
-                listener.enterFunctionCall(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFunctionCall" ):
-                listener.exitFunctionCall(self)
-
-
-
-
-    def functionCall(self):
-
-        localctx = cpp2llvmParser.FunctionCallContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 12, self.RULE_functionCall)
-        self._la = 0 # Token type
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 194
-            self.match(cpp2llvmParser.Identifier)
-            self.state = 195
-            self.match(cpp2llvmParser.LeftParen)
-            self.state = 204
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            if ((_la) & ~0x3f) == 0 and ((1 << _la) & 126) != 0 or (((_la - 83)) & ~0x3f) == 0 and ((1 << (_la - 83)) & 562949953458305) != 0:
-                self.state = 196
-                self.expression(0)
-                self.state = 201
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                while _la==122:
-                    self.state = 197
-                    self.match(cpp2llvmParser.Comma)
-                    self.state = 198
-                    self.expression(0)
-                    self.state = 203
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
-
-
-
-            self.state = 206
-            self.match(cpp2llvmParser.RightParen)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class ConditionContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def expression(self):
-            return self.getTypedRuleContext(cpp2llvmParser.ExpressionContext,0)
-
-
-        def getRuleIndex(self):
-            return cpp2llvmParser.RULE_condition
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCondition" ):
-                listener.enterCondition(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCondition" ):
-                listener.exitCondition(self)
-
-
-
-
-    def condition(self):
-
-        localctx = cpp2llvmParser.ConditionContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 14, self.RULE_condition)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 208
-            self.expression(0)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
     class StatementContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -1380,108 +1252,54 @@ class cpp2llvmParser ( Parser ):
     def statement(self):
 
         localctx = cpp2llvmParser.StatementContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_statement)
+        self.enterRule(localctx, 12, self.RULE_statement)
         try:
-            self.state = 217
+            self.state = 201
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 210
+                self.state = 194
                 self.expressionStatement()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 211
+                self.state = 195
                 self.compoundStatement()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 212
+                self.state = 196
                 self.selectionStatement()
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 213
+                self.state = 197
                 self.iterationStatement()
                 pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 214
+                self.state = 198
                 self.jumpStatement()
                 pass
 
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 215
+                self.state = 199
                 self.variableDeclarator()
                 pass
 
             elif la_ == 7:
                 self.enterOuterAlt(localctx, 7)
-                self.state = 216
+                self.state = 200
                 self.arrayDeclarator()
                 pass
 
 
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class ExpressionStatementContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def Semi(self):
-            return self.getToken(cpp2llvmParser.Semi, 0)
-
-        def expression(self):
-            return self.getTypedRuleContext(cpp2llvmParser.ExpressionContext,0)
-
-
-        def getRuleIndex(self):
-            return cpp2llvmParser.RULE_expressionStatement
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpressionStatement" ):
-                listener.enterExpressionStatement(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpressionStatement" ):
-                listener.exitExpressionStatement(self)
-
-
-
-
-    def expressionStatement(self):
-
-        localctx = cpp2llvmParser.ExpressionStatementContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_expressionStatement)
-        self._la = 0 # Token type
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 220
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            if ((_la) & ~0x3f) == 0 and ((1 << _la) & 126) != 0 or (((_la - 83)) & ~0x3f) == 0 and ((1 << (_la - 83)) & 562949953458305) != 0:
-                self.state = 219
-                self.expression(0)
-
-
-            self.state = 222
-            self.match(cpp2llvmParser.Semi)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1528,23 +1346,23 @@ class cpp2llvmParser ( Parser ):
     def compoundStatement(self):
 
         localctx = cpp2llvmParser.CompoundStatementContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_compoundStatement)
+        self.enterRule(localctx, 14, self.RULE_compoundStatement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 224
+            self.state = 203
             self.match(cpp2llvmParser.LeftBrace)
-            self.state = 228
+            self.state = 207
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while ((_la) & ~0x3f) == 0 and ((1 << _la) & 432375663769497726) != 0 or (((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & -9223372027152941055) != 0 or _la==132:
-                self.state = 225
+                self.state = 204
                 self.statement()
-                self.state = 230
+                self.state = 209
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 231
+            self.state = 210
             self.match(cpp2llvmParser.RightBrace)
         except RecognitionException as re:
             localctx.exception = re
@@ -1555,55 +1373,136 @@ class cpp2llvmParser ( Parser ):
         return localctx
 
 
-    class CaseStatementContext(ParserRuleContext):
+    class ExpressionStatementContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def Case(self):
-            return self.getToken(cpp2llvmParser.Case, 0)
+        def Semi(self):
+            return self.getToken(cpp2llvmParser.Semi, 0)
 
-        def constExpression(self):
-            return self.getTypedRuleContext(cpp2llvmParser.ConstExpressionContext,0)
-
-
-        def Colon(self):
-            return self.getToken(cpp2llvmParser.Colon, 0)
-
-        def statement(self):
-            return self.getTypedRuleContext(cpp2llvmParser.StatementContext,0)
+        def expression(self):
+            return self.getTypedRuleContext(cpp2llvmParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return cpp2llvmParser.RULE_caseStatement
+            return cpp2llvmParser.RULE_expressionStatement
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCaseStatement" ):
-                listener.enterCaseStatement(self)
+            if hasattr( listener, "enterExpressionStatement" ):
+                listener.enterExpressionStatement(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCaseStatement" ):
-                listener.exitCaseStatement(self)
+            if hasattr( listener, "exitExpressionStatement" ):
+                listener.exitExpressionStatement(self)
 
 
 
 
-    def caseStatement(self):
+    def expressionStatement(self):
 
-        localctx = cpp2llvmParser.CaseStatementContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_caseStatement)
+        localctx = cpp2llvmParser.ExpressionStatementContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 16, self.RULE_expressionStatement)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 233
-            self.match(cpp2llvmParser.Case)
-            self.state = 234
-            self.constExpression()
-            self.state = 235
-            self.match(cpp2llvmParser.Colon)
-            self.state = 236
-            self.statement()
+            self.state = 213
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if ((_la) & ~0x3f) == 0 and ((1 << _la) & 126) != 0 or (((_la - 83)) & ~0x3f) == 0 and ((1 << (_la - 83)) & 562949953458305) != 0:
+                self.state = 212
+                self.expression(0)
+
+
+            self.state = 215
+            self.match(cpp2llvmParser.Semi)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class FunctionCallContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def Identifier(self):
+            return self.getToken(cpp2llvmParser.Identifier, 0)
+
+        def LeftParen(self):
+            return self.getToken(cpp2llvmParser.LeftParen, 0)
+
+        def RightParen(self):
+            return self.getToken(cpp2llvmParser.RightParen, 0)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(cpp2llvmParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(cpp2llvmParser.ExpressionContext,i)
+
+
+        def Comma(self, i:int=None):
+            if i is None:
+                return self.getTokens(cpp2llvmParser.Comma)
+            else:
+                return self.getToken(cpp2llvmParser.Comma, i)
+
+        def getRuleIndex(self):
+            return cpp2llvmParser.RULE_functionCall
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFunctionCall" ):
+                listener.enterFunctionCall(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFunctionCall" ):
+                listener.exitFunctionCall(self)
+
+
+
+
+    def functionCall(self):
+
+        localctx = cpp2llvmParser.FunctionCallContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 18, self.RULE_functionCall)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 217
+            self.match(cpp2llvmParser.Identifier)
+            self.state = 218
+            self.match(cpp2llvmParser.LeftParen)
+            self.state = 227
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if ((_la) & ~0x3f) == 0 and ((1 << _la) & 126) != 0 or (((_la - 83)) & ~0x3f) == 0 and ((1 << (_la - 83)) & 562949953458305) != 0:
+                self.state = 219
+                self.expression(0)
+                self.state = 224
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                while _la==122:
+                    self.state = 220
+                    self.match(cpp2llvmParser.Comma)
+                    self.state = 221
+                    self.expression(0)
+                    self.state = 226
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+
+
+
+            self.state = 229
+            self.match(cpp2llvmParser.RightParen)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1676,63 +1575,163 @@ class cpp2llvmParser ( Parser ):
     def selectionStatement(self):
 
         localctx = cpp2llvmParser.SelectionStatementContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 24, self.RULE_selectionStatement)
+        self.enterRule(localctx, 20, self.RULE_selectionStatement)
         self._la = 0 # Token type
         try:
-            self.state = 260
+            self.state = 253
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [41]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 238
+                self.state = 231
                 self.match(cpp2llvmParser.If)
-                self.state = 239
+                self.state = 232
                 self.match(cpp2llvmParser.LeftParen)
-                self.state = 240
+                self.state = 233
                 self.condition()
-                self.state = 241
+                self.state = 234
                 self.match(cpp2llvmParser.RightParen)
-                self.state = 242
+                self.state = 235
                 self.statement()
-                self.state = 245
+                self.state = 238
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
                 if la_ == 1:
-                    self.state = 243
+                    self.state = 236
                     self.match(cpp2llvmParser.Else)
-                    self.state = 244
+                    self.state = 237
                     self.statement()
 
 
                 pass
             elif token in [65]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 247
+                self.state = 240
                 self.match(cpp2llvmParser.Switch)
-                self.state = 248
+                self.state = 241
                 self.match(cpp2llvmParser.LeftParen)
-                self.state = 249
+                self.state = 242
                 self.condition()
-                self.state = 250
+                self.state = 243
                 self.match(cpp2llvmParser.RightParen)
-                self.state = 251
+                self.state = 244
                 self.match(cpp2llvmParser.LeftBrace)
-                self.state = 255
+                self.state = 248
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==14:
-                    self.state = 252
+                    self.state = 245
                     self.caseStatement()
-                    self.state = 257
+                    self.state = 250
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 258
+                self.state = 251
                 self.match(cpp2llvmParser.RightBrace)
                 pass
             else:
                 raise NoViableAltException(self)
 
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class ConditionContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def expression(self):
+            return self.getTypedRuleContext(cpp2llvmParser.ExpressionContext,0)
+
+
+        def getRuleIndex(self):
+            return cpp2llvmParser.RULE_condition
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCondition" ):
+                listener.enterCondition(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCondition" ):
+                listener.exitCondition(self)
+
+
+
+
+    def condition(self):
+
+        localctx = cpp2llvmParser.ConditionContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 22, self.RULE_condition)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 255
+            self.expression(0)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class CaseStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def Case(self):
+            return self.getToken(cpp2llvmParser.Case, 0)
+
+        def constExpression(self):
+            return self.getTypedRuleContext(cpp2llvmParser.ConstExpressionContext,0)
+
+
+        def Colon(self):
+            return self.getToken(cpp2llvmParser.Colon, 0)
+
+        def statement(self):
+            return self.getTypedRuleContext(cpp2llvmParser.StatementContext,0)
+
+
+        def getRuleIndex(self):
+            return cpp2llvmParser.RULE_caseStatement
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCaseStatement" ):
+                listener.enterCaseStatement(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCaseStatement" ):
+                listener.exitCaseStatement(self)
+
+
+
+
+    def caseStatement(self):
+
+        localctx = cpp2llvmParser.CaseStatementContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 24, self.RULE_caseStatement)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 257
+            self.match(cpp2llvmParser.Case)
+            self.state = 258
+            self.constExpression()
+            self.state = 259
+            self.match(cpp2llvmParser.Colon)
+            self.state = 260
+            self.statement()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

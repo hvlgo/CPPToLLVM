@@ -8,21 +8,21 @@ else:
 # This class defines a complete listener for a parse tree produced by cpp2llvmParser.
 class cpp2llvmParserListener(ParseTreeListener):
 
-    # Enter a parse tree produced by cpp2llvmParser#literal.
-    def enterLiteral(self, ctx:cpp2llvmParser.LiteralContext):
-        pass
-
-    # Exit a parse tree produced by cpp2llvmParser#literal.
-    def exitLiteral(self, ctx:cpp2llvmParser.LiteralContext):
-        pass
-
-
     # Enter a parse tree produced by cpp2llvmParser#translationUnit.
     def enterTranslationUnit(self, ctx:cpp2llvmParser.TranslationUnitContext):
         pass
 
     # Exit a parse tree produced by cpp2llvmParser#translationUnit.
     def exitTranslationUnit(self, ctx:cpp2llvmParser.TranslationUnitContext):
+        pass
+
+
+    # Enter a parse tree produced by cpp2llvmParser#literal.
+    def enterLiteral(self, ctx:cpp2llvmParser.LiteralContext):
+        pass
+
+    # Exit a parse tree produced by cpp2llvmParser#literal.
+    def exitLiteral(self, ctx:cpp2llvmParser.LiteralContext):
         pass
 
 
@@ -62,39 +62,12 @@ class cpp2llvmParserListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by cpp2llvmParser#functionCall.
-    def enterFunctionCall(self, ctx:cpp2llvmParser.FunctionCallContext):
-        pass
-
-    # Exit a parse tree produced by cpp2llvmParser#functionCall.
-    def exitFunctionCall(self, ctx:cpp2llvmParser.FunctionCallContext):
-        pass
-
-
-    # Enter a parse tree produced by cpp2llvmParser#condition.
-    def enterCondition(self, ctx:cpp2llvmParser.ConditionContext):
-        pass
-
-    # Exit a parse tree produced by cpp2llvmParser#condition.
-    def exitCondition(self, ctx:cpp2llvmParser.ConditionContext):
-        pass
-
-
     # Enter a parse tree produced by cpp2llvmParser#statement.
     def enterStatement(self, ctx:cpp2llvmParser.StatementContext):
         pass
 
     # Exit a parse tree produced by cpp2llvmParser#statement.
     def exitStatement(self, ctx:cpp2llvmParser.StatementContext):
-        pass
-
-
-    # Enter a parse tree produced by cpp2llvmParser#expressionStatement.
-    def enterExpressionStatement(self, ctx:cpp2llvmParser.ExpressionStatementContext):
-        pass
-
-    # Exit a parse tree produced by cpp2llvmParser#expressionStatement.
-    def exitExpressionStatement(self, ctx:cpp2llvmParser.ExpressionStatementContext):
         pass
 
 
@@ -107,12 +80,21 @@ class cpp2llvmParserListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by cpp2llvmParser#caseStatement.
-    def enterCaseStatement(self, ctx:cpp2llvmParser.CaseStatementContext):
+    # Enter a parse tree produced by cpp2llvmParser#expressionStatement.
+    def enterExpressionStatement(self, ctx:cpp2llvmParser.ExpressionStatementContext):
         pass
 
-    # Exit a parse tree produced by cpp2llvmParser#caseStatement.
-    def exitCaseStatement(self, ctx:cpp2llvmParser.CaseStatementContext):
+    # Exit a parse tree produced by cpp2llvmParser#expressionStatement.
+    def exitExpressionStatement(self, ctx:cpp2llvmParser.ExpressionStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by cpp2llvmParser#functionCall.
+    def enterFunctionCall(self, ctx:cpp2llvmParser.FunctionCallContext):
+        pass
+
+    # Exit a parse tree produced by cpp2llvmParser#functionCall.
+    def exitFunctionCall(self, ctx:cpp2llvmParser.FunctionCallContext):
         pass
 
 
@@ -122,6 +104,24 @@ class cpp2llvmParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by cpp2llvmParser#selectionStatement.
     def exitSelectionStatement(self, ctx:cpp2llvmParser.SelectionStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by cpp2llvmParser#condition.
+    def enterCondition(self, ctx:cpp2llvmParser.ConditionContext):
+        pass
+
+    # Exit a parse tree produced by cpp2llvmParser#condition.
+    def exitCondition(self, ctx:cpp2llvmParser.ConditionContext):
+        pass
+
+
+    # Enter a parse tree produced by cpp2llvmParser#caseStatement.
+    def enterCaseStatement(self, ctx:cpp2llvmParser.CaseStatementContext):
+        pass
+
+    # Exit a parse tree produced by cpp2llvmParser#caseStatement.
+    def exitCaseStatement(self, ctx:cpp2llvmParser.CaseStatementContext):
         pass
 
 

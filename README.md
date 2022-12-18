@@ -12,7 +12,7 @@
 
 * cd /usr/local/lib
 
-* curl -O https://www.antlr.org/download/antlr-4.11.1-complete.jar
+* sudo curl -O https://www.antlr.org/download/antlr-4.11.1-complete.jar
 
 * add follow to `.bashrc` or run it (if just run it, you need run it again when create a new terminal)
 
@@ -31,4 +31,4 @@
 * antlr4 -Dlanguage=Python3 ./grammar/cpp2llvmLexer.g4 ./grammar/cpp2llvmParser.g4 -Xexact-output-dir -o src
 
 ### run parser and get the abstract syntax tree
-python main.py \<inputfile>
+python main.py \<inputfile> \<outputfile>

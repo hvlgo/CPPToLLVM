@@ -3,8 +3,9 @@ options {
 	tokenVocab = cpp2llvmLexer;
 }
 
-/*Lexer*/
+translationUnit: declaration* EOF;
 
+/*Lexer*/
 literal:
 	IntegerLiteral
 	| CharacterLiteral
@@ -13,10 +14,9 @@ literal:
 	| BooleanLiteral
 	| PointerLiteral;
 
-translationUnit: declaration* EOF;
-/*Expressions*/
 stringLiteral: StringLiteral;
 
+/*Expressions*/
 constExpression: literal;
 
 leftExpression:
@@ -55,11 +55,6 @@ expression:
 	| leftExpression MinusMinus;
 
 /* Statements */
-functionCall:
-	Identifier LeftParen (expression (Comma expression)*)? RightParen;
-
-condition: expression;
-
 statement:
 	expressionStatement
 	| compoundStatement
@@ -69,17 +64,22 @@ statement:
 	| variableDeclarator
 	| arrayDeclarator;
 
-expressionStatement: expression? Semi;
-
 compoundStatement: LeftBrace statement* RightBrace;
 
-caseStatement: Case constExpression Colon statement;
+expressionStatement: expression? Semi;
+
+functionCall:
+	Identifier LeftParen (expression (Comma expression)*)? RightParen;
 
 selectionStatement:
 	If LeftParen condition RightParen statement (Else statement)?
 	| Switch LeftParen condition RightParen LeftBrace (
 		caseStatement
 	)* RightBrace;
+
+condition: expression;
+
+caseStatement: Case constExpression Colon statement;
 
 iterationStatement:
 	While LeftParen condition RightParen statement
