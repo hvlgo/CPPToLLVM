@@ -488,6 +488,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitTranslationUnit" ):
                 listener.exitTranslationUnit(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTranslationUnit" ):
+                return visitor.visitTranslationUnit(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -555,6 +561,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitLiteral" ):
                 listener.exitLiteral(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLiteral" ):
+                return visitor.visitLiteral(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -602,6 +614,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitStringLiteral" ):
                 listener.exitStringLiteral(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStringLiteral" ):
+                return visitor.visitStringLiteral(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -643,6 +661,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitConstExpression" ):
                 listener.exitConstExpression(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitConstExpression" ):
+                return visitor.visitConstExpression(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -694,6 +718,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitLeftExpression" ):
                 listener.exitLeftExpression(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLeftExpression" ):
+                return visitor.visitLeftExpression(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -852,6 +882,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitExpression" ):
                 listener.exitExpression(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpression" ):
+                return visitor.visitExpression(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1247,6 +1283,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitFunctionCall" ):
                 listener.exitFunctionCall(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunctionCall" ):
+                return visitor.visitFunctionCall(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1357,6 +1399,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitStatement" ):
                 listener.exitStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStatement" ):
+                return visitor.visitStatement(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1482,6 +1530,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitCompoundStatement" ):
                 listener.exitCompoundStatement(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCompoundStatement" ):
+                return visitor.visitCompoundStatement(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1539,6 +1593,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitExpressionStatement" ):
                 listener.exitExpressionStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpressionStatement" ):
+                return visitor.visitExpressionStatement(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1609,6 +1669,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIfStatement" ):
                 listener.exitIfStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIfStatement" ):
+                return visitor.visitIfStatement(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1692,6 +1758,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitSwitchStatement" ):
                 listener.exitSwitchStatement(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSwitchStatement" ):
+                return visitor.visitSwitchStatement(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1765,6 +1837,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitCaseStatement" ):
                 listener.exitCaseStatement(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCaseStatement" ):
+                return visitor.visitCaseStatement(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1825,6 +1903,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitWhileStatement" ):
                 listener.exitWhileStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWhileStatement" ):
+                return visitor.visitWhileStatement(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1894,6 +1978,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDoWhileStatement" ):
                 listener.exitDoWhileStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDoWhileStatement" ):
+                return visitor.visitDoWhileStatement(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1974,6 +2064,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitForStatement" ):
                 listener.exitForStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitForStatement" ):
+                return visitor.visitForStatement(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2061,6 +2157,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitForExprSet" ):
                 listener.exitForExprSet(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitForExprSet" ):
+                return visitor.visitForExprSet(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2122,6 +2224,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitReturnStatement" ):
                 listener.exitReturnStatement(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReturnStatement" ):
+                return visitor.visitReturnStatement(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2177,6 +2285,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitBreakStatement" ):
                 listener.exitBreakStatement(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBreakStatement" ):
+                return visitor.visitBreakStatement(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2222,6 +2336,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitContinueStatement" ):
                 listener.exitContinueStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitContinueStatement" ):
+                return visitor.visitContinueStatement(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2274,6 +2394,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDeclaration" ):
                 listener.exitDeclaration(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDeclaration" ):
+                return visitor.visitDeclaration(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2343,6 +2469,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitVariableDeclarator" ):
                 listener.exitVariableDeclarator(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVariableDeclarator" ):
+                return visitor.visitVariableDeclarator(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2397,6 +2529,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitVariableDeclarationList" ):
                 listener.exitVariableDeclarationList(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVariableDeclarationList" ):
+                return visitor.visitVariableDeclarationList(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2461,6 +2599,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitVariableDeclaration" ):
                 listener.exitVariableDeclaration(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVariableDeclaration" ):
+                return visitor.visitVariableDeclaration(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2521,6 +2665,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitVarDeclWithoutInit" ):
                 listener.exitVarDeclWithoutInit(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVarDeclWithoutInit" ):
+                return visitor.visitVarDeclWithoutInit(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2568,6 +2718,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitVarDeclWithConstInit" ):
                 listener.exitVarDeclWithConstInit(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVarDeclWithConstInit" ):
+                return visitor.visitVarDeclWithConstInit(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2621,6 +2777,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitVarDeclWithNormalInit" ):
                 listener.exitVarDeclWithNormalInit(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVarDeclWithNormalInit" ):
+                return visitor.visitVarDeclWithNormalInit(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2670,6 +2832,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitArrayDeclarator" ):
                 listener.exitArrayDeclarator(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArrayDeclarator" ):
+                return visitor.visitArrayDeclarator(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2746,6 +2914,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitNormalArrayDeclaration" ):
                 listener.exitNormalArrayDeclaration(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNormalArrayDeclaration" ):
+                return visitor.visitNormalArrayDeclaration(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2816,6 +2990,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitArrayAssginExpressionList" ):
                 listener.exitArrayAssginExpressionList(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArrayAssginExpressionList" ):
+                return visitor.visitArrayAssginExpressionList(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2885,6 +3065,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitStringDeclaration" ):
                 listener.exitStringDeclaration(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStringDeclaration" ):
+                return visitor.visitStringDeclaration(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2950,6 +3136,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitArrayName" ):
                 listener.exitArrayName(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArrayName" ):
+                return visitor.visitArrayName(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3001,6 +3193,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFunctionDeclarator" ):
                 listener.exitFunctionDeclarator(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunctionDeclarator" ):
+                return visitor.visitFunctionDeclarator(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3060,6 +3258,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitFunctionDeclaration" ):
                 listener.exitFunctionDeclaration(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunctionDeclaration" ):
+                return visitor.visitFunctionDeclaration(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3107,6 +3311,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFunctionDefinition" ):
                 listener.exitFunctionDefinition(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunctionDefinition" ):
+                return visitor.visitFunctionDefinition(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3164,6 +3374,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFunctionHead" ):
                 listener.exitFunctionHead(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunctionHead" ):
+                return visitor.visitFunctionHead(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3231,6 +3447,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitFunctionParameterList" ):
                 listener.exitFunctionParameterList(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunctionParameterList" ):
+                return visitor.visitFunctionParameterList(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3295,6 +3517,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFunctionParameter" ):
                 listener.exitFunctionParameter(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunctionParameter" ):
+                return visitor.visitFunctionParameter(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3365,6 +3593,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitTypeModifier" ):
                 listener.exitTypeModifier(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTypeModifier" ):
+                return visitor.visitTypeModifier(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3422,6 +3656,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPointerTypeModifier" ):
                 listener.exitPointerTypeModifier(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPointerTypeModifier" ):
+                return visitor.visitPointerTypeModifier(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3482,6 +3722,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitNormalTypeModifier" ):
                 listener.exitNormalTypeModifier(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNormalTypeModifier" ):
+                return visitor.visitNormalTypeModifier(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3564,6 +3810,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitIntegerTypeModifier" ):
                 listener.exitIntegerTypeModifier(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIntegerTypeModifier" ):
+                return visitor.visitIntegerTypeModifier(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3638,6 +3890,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitRealTypeModifier" ):
                 listener.exitRealTypeModifier(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRealTypeModifier" ):
+                return visitor.visitRealTypeModifier(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3699,6 +3957,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitBoolTypeModifier" ):
                 listener.exitBoolTypeModifier(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBoolTypeModifier" ):
+                return visitor.visitBoolTypeModifier(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3740,6 +4004,12 @@ class cpp2llvmParser ( Parser ):
             if hasattr( listener, "exitCharTypeModifier" ):
                 listener.exitCharTypeModifier(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCharTypeModifier" ):
+                return visitor.visitCharTypeModifier(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3780,6 +4050,12 @@ class cpp2llvmParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitVoidTypeModifier" ):
                 listener.exitVoidTypeModifier(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVoidTypeModifier" ):
+                return visitor.visitVoidTypeModifier(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 

@@ -30,5 +30,9 @@
 
 * antlr4 -Dlanguage=Python3 ./grammar/cpp2llvmLexer.g4 ./grammar/cpp2llvmParser.g4 -Xexact-output-dir -o src
 
+### generate python file (including visitor) according to grammar
+
+* antlr4 -Dlanguage=Python3 ./grammar/cpp2llvmLexer.g4 ./grammar/cpp2llvmParser.g4 -Xexact-output-dir -o src -visitor
+
 ### run parser and get the abstract syntax tree
 python main.py \<inputfile> \<outputfile>
