@@ -19,6 +19,21 @@ class cpp2llvmParserVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by cpp2llvmParser#integerLiteral.
+    def visitIntegerLiteral(self, ctx:cpp2llvmParser.IntegerLiteralContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by cpp2llvmParser#characterLiteral.
+    def visitCharacterLiteral(self, ctx:cpp2llvmParser.CharacterLiteralContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by cpp2llvmParser#floatingLiteral.
+    def visitFloatingLiteral(self, ctx:cpp2llvmParser.FloatingLiteralContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by cpp2llvmParser#stringLiteral.
     def visitStringLiteral(self, ctx:cpp2llvmParser.StringLiteralContext):
         return self.visitChildren(ctx)

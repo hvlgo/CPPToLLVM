@@ -26,6 +26,33 @@ class cpp2llvmParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by cpp2llvmParser#integerLiteral.
+    def enterIntegerLiteral(self, ctx:cpp2llvmParser.IntegerLiteralContext):
+        pass
+
+    # Exit a parse tree produced by cpp2llvmParser#integerLiteral.
+    def exitIntegerLiteral(self, ctx:cpp2llvmParser.IntegerLiteralContext):
+        pass
+
+
+    # Enter a parse tree produced by cpp2llvmParser#characterLiteral.
+    def enterCharacterLiteral(self, ctx:cpp2llvmParser.CharacterLiteralContext):
+        pass
+
+    # Exit a parse tree produced by cpp2llvmParser#characterLiteral.
+    def exitCharacterLiteral(self, ctx:cpp2llvmParser.CharacterLiteralContext):
+        pass
+
+
+    # Enter a parse tree produced by cpp2llvmParser#floatingLiteral.
+    def enterFloatingLiteral(self, ctx:cpp2llvmParser.FloatingLiteralContext):
+        pass
+
+    # Exit a parse tree produced by cpp2llvmParser#floatingLiteral.
+    def exitFloatingLiteral(self, ctx:cpp2llvmParser.FloatingLiteralContext):
+        pass
+
+
     # Enter a parse tree produced by cpp2llvmParser#stringLiteral.
     def enterStringLiteral(self, ctx:cpp2llvmParser.StringLiteralContext):
         pass

@@ -36,6 +36,8 @@ class myVisitor(cpp2llvmParserVisitor):
 
         self.string_count = 0
         self.Module.triple="x86_64-pc-linux"
+    
+    
 
 def main(argv):
     input_stream = FileStream(argv[1])
