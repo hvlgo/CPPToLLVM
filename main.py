@@ -3,6 +3,8 @@ from antlr4 import *
 from src.cpp2llvmLexer import cpp2llvmLexer
 from src.cpp2llvmParser import cpp2llvmParser
 from src.cpp2llvmParserVisitor import cpp2llvmParserVisitor
+from llvmlite import ir
+from tables import *
 
 class myVisitor(cpp2llvmParserVisitor):
     def __init__(self):
