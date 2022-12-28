@@ -136,6 +136,7 @@ dmypy.json
 # out file
 build/
 dist/
+test/partial_test/
 *.spec
 *.txt
 *.html
