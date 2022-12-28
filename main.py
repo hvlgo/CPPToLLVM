@@ -4,31 +4,17 @@ from antlr4 import *
 from src.cpp2llvmLexer import cpp2llvmLexer
 from src.cpp2llvmParser import cpp2llvmParser
 from src.cpp2llvmParserVisitor import cpp2llvmParserVisitor
-from llvmlite import ir
 from llvmlite.ir.types import ArrayType
 from llvmlite.ir.values import GlobalVariable, ReturnValue
 from tables import *
-
-double = ir.DoubleType()
-int1 = ir.IntType(1)
-int8 = ir.IntType(8)
-int16 = ir.IntType(16)
-int32 = ir.IntType(32)
-int64 = ir.IntType(64)
-void = ir.VoidType()
-
-int8p = ir.PointerType(int8)
-int16p = ir.PointerType(int16)
-int32p = ir.PointerType(int32)
-int64p = ir.PointerType(int64)
-doublep = ir.PointerType(double)
+from typeDefs import *
 
 class myVisitor(cpp2llvmParserVisitor):
     def __init__(self):
         super().__init__()
         
         self.Module=ir.Module()
-        self.Builders=[]
+        self.Builders: list[ir.IRBuilder] = []
 
         self.symbolTable = SymbolTable()
         
@@ -359,6 +345,329 @@ class myVisitor(cpp2llvmParserVisitor):
                     'signed':True,
                     'value':ValueToReturn
                 }
+
+    def visitVariableDeclarator(self, ctx: cpp2llvmParser.VariableDeclaratorContext):
+        '''
+        variableDeclarator: typeModifier variableDeclarationList Semi;
+        '''
+
+        self.type = self.visit(ctx.typeModifier())
+        self.visit(ctx.variableDeclarationList())
+        del self.type
+
+        return
+
+    def visitVariableDeclarationList(self, ctx: cpp2llvmParser.VariableDeclarationListContext):
+        '''
+        variableDeclarationList: variableDeclaration (Comma variableDeclaration)*;
+        '''
+
+        for d in ctx.variableDeclaration():
+            self.visit(d)
+
+        return
+
+    def visitVarDeclWithoutInit(self, ctx: cpp2llvmParser.VarDeclWithoutInitContext):
+        '''
+        varDeclWithoutInit: Identifier;
+        '''
+        if self.symbolTable.current_scope_level == 0:  # 全局变量
+            v = GlobalVariable(self.Module, self.type,
+                               ctx.Identifier().getText())
+            v.linkage = 'internal'
+            v.initializer = ir.Constant(self.type, None)
+            self.symbolTable.addGlobal(ctx.Identifier().getText(),
+                                       SymbolProperty(type=self.type, value=v))
+        else:  # 局部变量v
+            Builder = self.Builders[-1]
+            v = Builder.alloca(self.type, name=ctx.Identifier().getText())
+            Builder.store(ir.Constant(self.type, None), v)
+            self.symbolTable.addLocal(ctx.Identifier().getText(),
+                                      SymbolProperty(type=self.type, value=v))
+
+        return
+
+    def visitVarDeclWithConstInit(self, ctx: cpp2llvmParser.VarDeclWithConstInitContext):
+        '''
+        varDeclWithConstInit: Identifier Assign constExpression;
+        '''
+        if self.symbolTable.current_scope_level == 0:  # 全局变量
+            v = GlobalVariable(self.Module, self.type,
+                               ctx.Identifier().getText())
+            v.linkage = 'internal'
+            v.initializer = ir.Constant(
+                self.type, self.visit(ctx.constExpression())['value'])
+            self.symbolTable.addGlobal(ctx.Identifier().getText(),
+                                       SymbolProperty(type=self.type, value=v))
+        else:  # 局部变量v
+            Builder = self.Builders[-1]
+            v = Builder.alloca(self.type, name=ctx.Identifier().getText())
+            Builder.store(self.visit(ctx.constExpression())['value'], v)
+            self.symbolTable.addLocal(ctx.Identifier().getText(),
+                                      SymbolProperty(type=self.type, value=v))
+
+        return
+
+    def visitVarDeclWithNormalInit(self, ctx: cpp2llvmParser.VarDeclWithNormalInitContext):
+        '''
+        varDeclWithNormalInit: Identifier Assign expression;
+        '''
+        if self.symbolTable.current_scope_level == 0:  # 全局变量
+            raise BaseException(
+                "global variable must be initialized with a const expression")
+        else:  # 局部变量v
+            Builder = self.Builders[-1]
+            v = Builder.alloca(self.type, name=ctx.Identifier().getText())
+            Builder.store(self.visit(ctx.constExpression())['value'], v)
+            self.symbolTable.addLocal(ctx.Identifier().getText(),
+                                      SymbolProperty(type=self.type, value=v))
+
+        return
+
+    def visitVoidTypeModifier(self, ctx: cpp2llvmParser.VoidTypeModifierContext):
+        '''
+        voidTypeModifier: Void;
+        '''
+
+        return void
+
+    def visitCharTypeModifier(self, ctx: cpp2llvmParser.CharTypeModifierContext):
+        '''
+        charTypeModifier: Char;
+        '''
+
+        return int8
+
+    def visitBoolTypeModifier(self, ctx: cpp2llvmParser.BoolTypeModifierContext):
+        '''
+        boolTypeModifier: Bool;
+        '''
+
+        return int1
+
+    def visitRealTypeModifier(self, ctx: cpp2llvmParser.RealTypeModifierContext):
+        '''
+        realTypeModifier: Float | Double | Long Double;
+        '''
+
+        return double
+
+    def visitIntegerTypeModifier(self, ctx: cpp2llvmParser.IntegerTypeModifierContext):
+        '''
+        integerTypeModifier: Int | Long | Short | Long Long;
+        '''
+
+        t = ctx.getText()
+        if t == 'short':
+            return int16
+        elif t == 'int' or t == 'long':
+            return int32
+        else:
+            return int64
+
+    def visitNormalTypeModifier(self, ctx: cpp2llvmParser.NormalTypeModifierContext):
+        '''
+        normalTypeModifier: integerTypeModifier | realTypeModifier | boolTypeModifier | charTypeModifier | voidTypeModifier;
+        '''
+
+        return self.visit(ctx.getChild(0))
+
+    def visitPointerTypeModifier(self, ctx: cpp2llvmParser.PointerTypeModifierContext):
+        '''
+        pointerTypeModifier: normalTypeModifier Star;
+        '''
+
+        return ir.PointerType(self.visit(ctx.normalTypeModifier()))
+
+    def visitTypeModifier(self, ctx: cpp2llvmParser.TypeModifierContext):
+        '''
+        typeModifier: pointerTypeModifier | normalTypeModifier;
+        '''
+
+        return self.visit(ctx.getChild(0))
+
+    def visitFunctionParameter(self, ctx: cpp2llvmParser.FunctionParameterContext):
+        '''
+        functionParameter: typeModifier Identifier | Ellipsis;
+        '''
+
+        if ctx.Ellipsis() is None:
+            return {
+                'name': ctx.Identifier().getText(),
+                'type': self.visit(ctx.typeModifier()),
+            }
+        else:
+            return {
+                'name': 'varargs',
+                'type': 'varargs',
+            }
+
+    def visitFunctionParameterList(self, ctx: cpp2llvmParser.FunctionParameterListContext):
+        '''
+        functionParameterList: functionParameter (Comma functionParameter)*;
+        '''
+
+        functionParameterList = []
+        for p in ctx.functionParameter():
+            functionParameterList.append(self.visit(p))
+
+        return functionParameterList
+
+    def visitFunctionHead(self, ctx: cpp2llvmParser.FunctionHeadContext):
+        '''
+        functionHead: typeModifier Identifier LeftParen functionParameterList? RightParen;
+        '''
+
+        functionType = self.visit(ctx.typeModifier())
+        functionName = ctx.Identifier().getText()
+        functionParameterList = self.visit(ctx.functionParameterList())
+
+        return functionType, functionName, functionParameterList
+
+    def visitFunctionDefinition(self, ctx: cpp2llvmParser.FunctionDefinitionContext):
+        '''
+        functionDefinition: functionHead compoundStatement;
+        '''
+
+        functionType, functionName, functionParameterList = self.visit(
+            ctx.functionHead())
+        functionParamTypeList = [p['type'] for p in functionParameterList]
+        if 'varargs' in functionParamTypeList:
+            raise BaseException(
+                'varargs are not allowed in function definition')
+
+        llvmFunctionType = ir.FunctionType(
+            functionType, functionParamTypeList)
+        llvmFunction = ir.Function(self.Module, llvmFunctionType, functionName)
+        self.symbolTable.addGlobal(functionName, SymbolProperty(
+            type=llvmFunctionType, value=llvmFunction))
+
+        functionBlock = llvmFunction.append_basic_block('__'+functionName)
+        Builder = ir.IRBuilder(functionBlock)
+        self.Builders.append(Builder)
+
+        self.symbolTable.enterScope()
+        for p, aV in zip(functionParameterList, llvmFunction.args):
+            v = Builder.alloca(aV.type, name=p['name'])
+            Builder.store(aV, v)
+            self.symbolTable.addLocal(p['name'], SymbolProperty(p['type'], v))
+
+        returnValue = self.visit(ctx.compoundStatement())
+        if not self.Builders[-1].block.is_terminated:
+            self.Builders[-1].ret_void()
+
+        self.symbolTable.exitScope()
+        return {
+            'type': functionType,
+            'signed': True,
+            'value': returnValue,
+        }
+
+    def visitFunctionDeclaration(self, ctx: cpp2llvmParser.FunctionDeclarationContext):
+        '''
+        functionDeclaration: functionHead Semi;
+        '''
+
+        functionType, functionName, functionParameterList = self.visit(
+            ctx.functionHead())
+        functionParamTypeList = [p['type'] for p in functionParameterList]
+        has_varargs = 'varargs' in functionParamTypeList
+        if has_varargs:
+            if functionParamTypeList.count('varargs') > 1:
+                raise BaseException('too many varargs')
+            elif functionParamTypeList[-1] != 'varargs':
+                raise BaseException('varargs must be the last parameter')
+            functionParamTypeList = functionParamTypeList[:-1]
+
+        llvmFunctionType = ir.FunctionType(
+            functionType, functionParamTypeList, has_varargs)
+        llvmFunction = ir.Function(self.Module, llvmFunctionType, functionName)
+        self.symbolTable.addGlobal(functionName, SymbolProperty(
+            type=llvmFunctionType, value=llvmFunction))
+
+        return
+
+    def visitArrayName(self, ctx: cpp2llvmParser.ArrayNameContext):
+        '''
+        arrayName: Identifier LeftBracket IntegerLiteral RightBracket;
+        '''
+
+        arrayName = ctx.Identifier().getText()
+        arrayLength = int(ctx.IntegerLiteral.getText())
+        return arrayName, arrayLength
+
+    def visitStringDeclaration(self, ctx: cpp2llvmParser.StringDeclarationContext):
+        '''
+        stringDeclaration: charTypeModifier arrayName (Assign stringLiteral)? Semi;
+        '''
+
+        arrayType = self.visit(ctx.charTypeModifier())
+        arrayName, arrayLength = self.visit(ctx.arrayName())
+        llvmArrayType = ir.ArrayType(arrayType, arrayLength)
+
+        if self.symbolTable.current_scope_level == 0:  # 全局
+            if ctx.stringLiteral() is not None:
+                v = self.visit(ctx.stringLiteral())['value']
+            else:
+                v = ir.GlobalVariable(self.Module, llvmArrayType, arrayName)
+                v.linkage = 'internal'
+                v.initializer = ir.Constant(llvmArrayType, None)
+        else:
+            Builder = self.Builders[-1]
+            v = Builder.alloca(llvmArrayType, name=arrayName)
+            if ctx.stringLiteral() is not None:
+                strText = ast.literal_eval(ctx.stringLiteral().getText())
+                for i in range(len(strText)):
+                    c = ir.Constant(arrayType, ord(strText[i]))
+                    ptr = Builder.gep(
+                        v, [ir.Constant(int32, 0), ir.Constant(int32, i)])
+                    Builder.store(c, ptr)
+
+        self.symbolTable.addLocal(arrayName, SymbolProperty(llvmArrayType, v))
+        return
+
+    def visitNormalArrayDeclaration(self, ctx: cpp2llvmParser.NormalArrayDeclarationContext):
+        '''
+        normalArrayDeclaration: normalTypeModifier arrayName 
+                (Assign LeftBrace arrayAssginExpressionList RightBrace)? Semi;
+        '''
+
+        arrayType = self.visit(ctx.normalTypeModifier())
+        arrayName, arrayLength = self.visit(ctx.arrayName())
+        llvmArrayType = ir.ArrayType(arrayType, arrayLength)
+
+        if self.symbolTable.current_scope_level == 0:
+            v = ir.GlobalVariable(self.Module, llvmArrayType, arrayName)
+            v.linkage = 'internal'
+            v.initializer = ir.Constant(llvmArrayType, None)
+        else:
+            Builder = self.Builders[-1]
+            v = Builder.alloca(llvmArrayType, name=arrayName)
+
+        self.symbolTable.addLocal(arrayName, SymbolProperty(llvmArrayType, v))
+
+        if ctx.arrayAssginExpressionList() is not None:
+            arrayAssginExpressionList = self.visit(
+                ctx.arrayAssginExpressionList())
+            Builder = self.Builders[-1]
+            for i, e in enumerate(arrayAssginExpressionList):
+                ptr = Builder.gep(
+                    v, [ir.Constant(int32, 0), ir.Constant(int32, i)])
+                ev = e['value']
+                Builder.store(ev, ptr)
+
+        return
+
+    def visitArrayAssginExpressionList(self, ctx: cpp2llvmParser.ArrayAssginExpressionListContext):
+        '''
+        arrayAssginExpressionList: expression (Comma expression)*;
+        '''
+
+        arrayAssginExpressionList = []
+        for e in ctx.expression():
+            arrayAssginExpressionList.append(self.visit(e))
+
+        return arrayAssginExpressionList
     
 
 def main(argv):
