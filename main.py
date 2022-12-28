@@ -855,6 +855,7 @@ class myVisitor(cpp2llvmParserVisitor):
         self.blockToContinue.append(expressionBlock)
 
         #doStatementBlock
+        Builder.branch(doStatementBlock)
         self.Builders.pop()
         self.Builders.append(ir.IRBuilder(doStatementBlock))
         self.visit(ctx.getChild(1))
@@ -862,7 +863,6 @@ class myVisitor(cpp2llvmParserVisitor):
             self.Builders[-1].branch(expressionBlock)
 
         #expressionBlock
-        Builder.branch(expressionBlock)
         self.Builders.pop()
         self.Builders.append(ir.IRBuilder(expressionBlock))
         result = self.visit(ctx.getChild(4))
