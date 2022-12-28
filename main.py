@@ -861,7 +861,7 @@ class myVisitor(cpp2llvmParserVisitor):
         self.Builders.pop()
         self.Builders.append(ir.IRBuilder(doStatementBlock))
         self.visit(ctx.getChild(1))
-        if(not self.Builders[-1].block.is_terminated):
+        if not self.Builders[-1].block.is_terminated:
             self.Builders[-1].branch(expressionBlock)
 
         #expressionBlock
