@@ -55,9 +55,9 @@ void KMP()
 }
 int main()
 {
-	printf("enter S:");
+	printf("enter S文本串:");
 	scanf("%s",S);
-	printf("enter T:");
+	printf("enter T模式串:");
 	scanf("%s",T);
 
 	GetNext();
