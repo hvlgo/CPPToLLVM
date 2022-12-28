@@ -59,7 +59,7 @@ functionCall:
 	Identifier LeftParen (expression (Comma expression)*)? RightParen;
 
 statement:
-	expressionStatement
+	expression? Semi
 	| compoundStatement
 	| ifStatement
 	| switchStatement
@@ -73,8 +73,6 @@ statement:
 	| arrayDeclarator;
 
 compoundStatement: LeftBrace statement* RightBrace;
-
-expressionStatement: expression? Semi;
 
 // selectionStatement:
 // 	If LeftParen condition RightParen statement (Else statement)?

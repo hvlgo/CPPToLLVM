@@ -89,15 +89,6 @@ class cpp2llvmParserListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by cpp2llvmParser#expressionStatement.
-    def enterExpressionStatement(self, ctx:cpp2llvmParser.ExpressionStatementContext):
-        pass
-
-    # Exit a parse tree produced by cpp2llvmParser#expressionStatement.
-    def exitExpressionStatement(self, ctx:cpp2llvmParser.ExpressionStatementContext):
-        pass
-
-
     # Enter a parse tree produced by cpp2llvmParser#ifStatement.
     def enterIfStatement(self, ctx:cpp2llvmParser.IfStatementContext):
         pass

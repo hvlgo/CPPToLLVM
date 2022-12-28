@@ -54,11 +54,6 @@ class cpp2llvmParserVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by cpp2llvmParser#expressionStatement.
-    def visitExpressionStatement(self, ctx:cpp2llvmParser.ExpressionStatementContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by cpp2llvmParser#ifStatement.
     def visitIfStatement(self, ctx:cpp2llvmParser.IfStatementContext):
         return self.visitChildren(ctx)
