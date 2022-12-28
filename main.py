@@ -461,8 +461,7 @@ class myVisitor(cpp2llvmParserVisitor):
             v = GlobalVariable(self.Module, self.type,
                                ctx.Identifier().getText())
             v.linkage = 'internal'
-            v.initializer = ir.Constant(
-                self.type, self.visit(ctx.constExpression())['value'])
+            v.initializer = self.visit(ctx.constExpression())['value']
             self.symbolTable.addGlobal(ctx.Identifier().getText(),
                                        SymbolProperty(type=self.type, value=v))
         else:  # 局部变量v
