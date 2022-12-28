@@ -7,13 +7,14 @@ translationUnit: declaration* EOF;
 
 /*Lexer*/
 literal:
-	IntegerLiteral
-	| CharacterLiteral
-	| FloatingLiteral
-	| StringLiteral
-	| BooleanLiteral
-	| PointerLiteral;
+	integerLiteral
+	| characterLiteral
+	| floatingLiteral
+	| stringLiteral;
 
+integerLiteral: IntegerLiteral;
+characterLiteral: CharacterLiteral;
+floatingLiteral: FloatingLiteral;
 stringLiteral: StringLiteral;
 
 /*Expressions*/
