@@ -486,7 +486,7 @@ class myVisitor(cpp2llvmParserVisitor):
         else:  # 局部变量v
             Builder = self.Builders[-1]
             v = Builder.alloca(self.type, name=ctx.Identifier().getText())
-            Builder.store(self.visit(ctx.constExpression())['value'], v)
+            Builder.store(self.visit(ctx.expression())['value'], v)
             self.symbolTable.addLocal(ctx.Identifier().getText(),
                                       SymbolProperty(type=self.type, value=v))
 
