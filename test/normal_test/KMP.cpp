@@ -19,10 +19,14 @@ void getNext(int n){
 int main(){
     int n, m;
 
-    printf("enter pattern\n");
-    scanf("%d %s", &n, &p);
-    printf("enter text\n");
-    scanf("%d %s", &m, &s);
+    printf("enter pattern length:\n");
+    scanf("%d", &n);
+    printf("enter pattern:\n");
+    scanf("%s", &p);
+    printf("enter text length:\n");
+    scanf("%d", &m);
+    printf("enter text:\n");
+    scanf("%s", &s);
     
     getNext(n);
     
