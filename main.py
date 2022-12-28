@@ -102,7 +102,6 @@ class myVisitor(cpp2llvmParserVisitor):
                 Builder = self.Builders[-1]
                 Address = Builder.gep(index.get_value(),[ir.Constant(int32,0),subscribe],inbounds=True)
                 ValueToReturn = Builder.load(Address)
-                print("call arrayItem",ValueToReturn)
                 return{
                     'type':index.get_type().element,
                     'signed':True,
@@ -293,7 +292,6 @@ class myVisitor(cpp2llvmParserVisitor):
                 Builder = self.Builders[-1]
                 Address = Builder.gep(index.get_value(),[ir.Constant(int32,0),subscribe],inbounds=True)
                 ValueToReturn = Builder.load(Address)
-                print("call arrayItem",ValueToReturn)
                 return{
                     'type':index.get_type().element,
                     'signed':True,
@@ -372,7 +370,6 @@ class myVisitor(cpp2llvmParserVisitor):
                 对应语法:  expression: leftExpression '=' expression
                 '''
                 ChildCount=ctx.getChild(0).getChildCount()
-                print(left," is an varible")
 
                 right = self.assignTypeConvert(left,right)
                 Builder.store(right['value'],left['address'])
