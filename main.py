@@ -1099,6 +1099,41 @@ class myVisitor(cpp2llvmParserVisitor):
         self.Switchcaselabel[-1].pop(0)
 
         return
+
+    
+    def visitFunctionCall(self, ctx: cpp2llvmParser.FunctionCallContext):
+        # functionCall: Identifier LeftParen (expression (Comma expression)*)? RightParen;
+        Builder = self.Builders[-1]
+        functionName = ctx.Identifier().getText()
+        property = self.symbolTable.getProperty(functionName)
+        if(property.get_type().__class__.__name__ == ir.FunctionType.__name__):
+            # 参数列表
+            paramList = []
+            for expression in ctx.expression():
+                expression_value = self.visit(expression) 
+                paramList.append(expression_value['value'])
+            # 检查合法性
+            # print("paramList & argsList: ", paramList,property.get_type().args)
+            if(property.get_type().var_arg):
+                # 只和vararg之前的比较
+                vaild_paramList = paramList[:len(property.get_type().args)]
+            else:
+                vaild_paramList = paramList
+
+            if(len(vaild_paramList) != len(property.get_type().args)):
+                raise BaseException("wrong args number")
+            for real_param, param in zip(vaild_paramList,property.get_type().args):
+                if(param != real_param.type):
+                    raise BaseException("wrong args type",real_param.type,param)
+            # 函数调用
+            ret_value = Builder.call(property.get_value(), paramList, name='', cconv=None, tail=False, fastmath=())
+            ret_type = property.get_type().return_type
+            return {
+                "type" : ret_type,
+                'value': ret_value
+            }
+        else:
+            raise BaseException("not a function name")
     
 
 def main(argv):
@@ -1108,7 +1143,7 @@ def main(argv):
     parser = cpp2llvmParser(stream)
     tree = parser.translationUnit()
     ast = tree.toStringTree(recog=parser)
-    print(ast)
+    # print(ast)
     visitor = myVisitor()
     visitor.visit(tree)
     
