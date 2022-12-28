@@ -11,7 +11,7 @@ if __name__ == "__main__":
             print("testing: " + path)
             # print("python main.py " + path + " > " + path_ir)
             
-            ret_value = os.system("python3 main.py " + path + " " + path_ir + " > " + path_ir + ".log")
+            ret_value = os.system("python main.py " + path + " " + path_ir + " > " + path_ir + ".log")
             if(ret_value != 0):
                 print("failed: " + path)
                 sys.exit(1)
