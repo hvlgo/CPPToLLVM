@@ -622,7 +622,10 @@ class myVisitor(cpp2llvmParserVisitor):
 
         returnValue = self.visit(ctx.compoundStatement())
         if not self.Builders[-1].block.is_terminated:
-            self.Builders[-1].ret_void()
+            if functionType in [double, int1, int8, int16, int32, int64, int8p, int16p, int32p, int64p, doublep]:
+                self.Builders[-1].ret(ir.Constant(functionType, 0))
+            else:
+                self.Builders[-1].ret_void()
 
         self.symbolTable.exitScope()
         return {
