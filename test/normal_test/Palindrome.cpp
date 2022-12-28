@@ -1,30 +1,36 @@
 int printf(char* a, ...);
 int scanf(char* a, ...);
 
-char a[100];
 
-void isPalindrome() {
-    int flag = 1;
+
+char str[100];
+
+
+int check()
+{
+	printf("please enter your string:\n");
+	scanf("%s", str);
+	int flag = 1;
 	int front = 0;
 	int back = 0;
-	while(a[back] != '\0')
+	while(str[back] != '\0')
 		back = back + 1;
 	back = back - 1;
 	while(front < back)
 	{
-		if(a[front] != a[back])
+		if(str[ front ] != str[ back ])
 			flag = 0;
 		front = front + 1;
 		back = back - 1;
 	}
-	if (flag) 
+	if(flag)
 		printf("true\n");
-	else 
+	else
 		printf("false\n");
+	return 0;
 }
 
-int main() {
-	scanf("%s", a);
-	isPalindrome();
+int main(){
+	check();
 	return 0;
 }
