@@ -136,7 +136,75 @@ class myVisitor(cpp2llvmParserVisitor):
             return True
         else:
             return False
-        
+    
+    def isInt(self,llvmNum):
+        if llvmNum['type']==int32 or llvmNum['type']== int64 or llvmNum['type'] == int16 or llvmNum['type'] == int8 or llvmNum['type'] == int1:
+            return True
+        return False
+
+    def intConvert(self,src,target):
+        Builder = self.Builders[-1] 
+        if(target['type'].width >= src['type'].width):  
+            if(src['type'].width == 1):
+                ValueToReturn= Builder.zext(src['value'],target['type'])
+                return{
+                    'type':target['type'],
+                    'signed':src['signed'],
+                    'value':ValueToReturn
+                }
+            else:
+                if(src['signed']):
+                    ValueToReturn = Builder.sext(src['value'],target['type'])
+                else:
+                    ValueToReturn = Builder.zext(src['value'],target['type'])
+                return {
+                    'type':target['type'],
+                    'signed':src['signed'],
+                    'value':ValueToReturn
+                }
+        else:
+            ValueToReturn = Builder.trunc(src['value'],target['type'])
+            return {
+                    'type':target['type'],
+                    'signed':src['signed'],
+                    'value':ValueToReturn
+            }
+            
+    def intToDouble(self,llvmNum):
+        Builder = self.Builders[-1]
+        if(llvmNum['signed']):
+            ValueToReturn = Builder.sitofp(llvmNum['value'],double)
+        else:
+            ValueToReturn = Builder.uitofp(llvmNum['value'],double)
+        return{
+            'type':double,
+            'value':ValueToReturn
+        }
+
+    
+    def doubleToInt(self,llvmNum,target):
+        Builder = self.Builders[-1]
+        if(llvmNum['signed']):
+            ValueToReturn = Builder.fptosi(llvmNum['value'],target['type'])
+        else:
+            ValueToReturn = Builder.fptoui(llvmNum['value'],target['type'])
+        return {
+            'type':target['type'],
+            'value':ValueToReturn
+        }
+    
+    def assignTypeConvert(self,left,right):
+        if(left['type'] != right['type']):
+            if(self.isInt(left) and self.isInt(right)):
+                right = self.intConvert(right,left)
+            elif(self.isInt(left) and self.isInt(right)==False):
+                right = self.doubleToInt(right,left)
+            elif(self.isInt(left)==False and self.isInt(right)):
+                right = self.intToDouble(right)
+            else:
+                pass
+        return right 
+    
     def visitExpression(self, ctx:cpp2llvmParser.ExpressionContext):
         ChildCount=ctx.getChildCount()
         Builder = self.Builders[-1]
