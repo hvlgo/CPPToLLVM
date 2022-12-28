@@ -75,41 +75,32 @@ statement:
 
 compoundStatement: LeftBrace statement* RightBrace;
 
-// selectionStatement:
-// 	If LeftParen condition RightParen statement (Else statement)?
-// 	| Switch LeftParen condition RightParen LeftBrace (
-// 		caseStatement
-// 	)* RightBrace;
+ifStatement:
+	If LeftParen expression RightParen statement (Else statement)?;
 
-ifStatement : If LeftParen expression RightParen statement (Else statement)?;
-
-switchStatement : Switch LeftParen expression RightParen LeftBrace (caseStatement)* RightBrace;
+switchStatement:
+	Switch LeftParen expression RightParen LeftBrace (
+		caseStatement
+	)* RightBrace;
 
 caseStatement: Case constExpression Colon statement;
 
-// iterationStatement:
-// 	While LeftParen condition RightParen statement
-// 	| Do statement While LeftParen expression RightParen Semi
-// 	| For LeftParen (expression (Comma expression)*)? Semi expression? Semi (
-// 		expression (Comma expression)*
-// 	)? RightParen statement;
+whileStatement: While LeftParen expression RightParen statement;
 
-whileStatement : While LeftParen expression RightParen statement;
+doWhileStatement:
+	Do statement While LeftParen expression RightParen Semi;
 
-doWhileStatement : Do statement While LeftParen expression RightParen Semi;
-
-forStatement : For LeftParen forExprSet? Semi expression? Semi forExprSet? RightParen statement;
+forStatement:
+	For LeftParen forExprSet? Semi expression? Semi forExprSet? RightParen statement;
 
 forExprSet: expression (Comma expression)*;
 
-// jumpStatement:
-// 	(Break | Continue | Return expression? | Goto Identifier) Semi;
 
-returnStatement : Return expression? Semi;
+returnStatement: Return expression? Semi;
 
-breakStatement : Break Semi;
+breakStatement: Break Semi;
 
-continueStatement : Continue Semi;
+continueStatement: Continue Semi;
 
 /*Declarations*/
 declaration:
@@ -159,10 +150,7 @@ functionHead:
 functionParameterList:
 	functionParameter (Comma functionParameter)*;
 
-functionParameter:
-	pointerTypeModifier Identifier
-	| normalTypeModifier Identifier
-	| Ellipsis;
+functionParameter: typeModifier Identifier | Ellipsis;
 
 typeModifier: pointerTypeModifier | normalTypeModifier;
 
